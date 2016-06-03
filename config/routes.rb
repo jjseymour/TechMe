@@ -1,31 +1,18 @@
 Rails.application.routes.draw do
-  get 'jobs/index'
 
-  get 'jobs/show'
+  root 'home#show'
 
-  get 'events/index'
+  resources 'jobs', only: [:index, :show]
 
-  get 'events/show'
+  resources 'events', only: [:index, :show]
 
-  get 'sessions/new'
+  resources 'sessions', only: [:new, :create, :destroy]
 
-  get 'sessions/create'
+  resources 'home', only: :show
 
-  get 'sessions/destroy'
+  resources 'registrations', only: :new
 
-  get 'home/show'
-
-  get 'registrations/new'
-
-  get 'users/create'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
+  resources 'users', only: [:create, :show, :edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

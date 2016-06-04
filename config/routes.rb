@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 
   resources 'events', only: [:index, :show]
 
-  resources 'sessions', only: [:new, :create, :destroy]
+  resources 'sessions', only: :create
+  get 'login', to: 'sessions#new'
+  delete 'logout', to: 'sessions#destroy'
 
   resources 'home', only: :show
 
-  resources 'registrations', only: :new
+  get 'signup', to: 'registrations#new', as: 'new_registration'
 
   resources 'users', only: [:create, :show, :edit, :update, :destroy]
 

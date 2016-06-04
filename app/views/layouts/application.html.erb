@@ -1,6 +1,4 @@
 <!doctype html>
-<!--Conditionals for IE9 Support-->
-<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
 <html>
   <head>
     <title>TechMe</title>
@@ -12,14 +10,14 @@
     <meta name="keywords" content="responsive html5 template, landing page, bootstrap 3.0, css, jquery" />
     <meta name="author" content="8Guild" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
+
     <!--Favicon-->
    <!--  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-    
+
     <!--Google Fonts-->
     <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> -->
-    
+
     <!--Google Analytics-->
      <!-- <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -30,12 +28,12 @@
           ga.type = 'text/javascript';
           ga.async = true;
           ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-      
+
           var s = document.getElementsByTagName('script')[0];
           s.parentNode.insertBefore(ga, s);
       })();
     </script> -->
-    
+
     <!--Facebook Remarketing (Placed in <head>))-->
    <!-- <script>
     // (function() {
@@ -54,12 +52,12 @@
     // window._fbq.push(['track', 'PixelInitialized', {}]);
     </script>
     <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1491098954441261&amp;ev=NoScript" /></noscript> -->
-        
+
   </head>
 
   <!--Body-->
   <body class="space-top">
-  
+
     <!--Color Switcher-->
     <div class="color-switcher group animated">
       <div class="toggle"><i class="icon-paint-format"></i></div>
@@ -96,10 +94,10 @@
         <span>#838dcf</span>
       </div>
     </div>
-    
+
     <!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>
-    
+
     <!--Login Modal-->
     <div class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true">
       <div class="modal-dialog">
@@ -124,12 +122,12 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    
+
     <!--Header-->
     <header class="stiky-header">
       <div class="container group">
-        <a class="logo" href="index.html"><img src="img/logo-dark.png" alt="Ultima"/></a>
-        <a class="logo-mobile" href="index.html"><img src="img/logo-mobile.png" alt="Ultima"/></a>
+        <a class="logo" href="index.html"><%= image_tag "logo-dark.png", alt:"Ultima" %></a>
+        <a class="logo-mobile" href="index.html"><%= image_tag "logo-mobile.png", alt:"Ultima" %></a>
         <div class="navi-toggle group">
           <span class="dot"></span><span class="line"></span>
           <span class="dot"></span><span class="line"></span>
@@ -160,11 +158,11 @@
         </nav>
       </div>
     </header>
-    
+
     <!--Hero Unit with Slider-->
     <section class="hero">
       <div class="container">
-        
+
         <!--Hero Slider-->
         <div class="row">
           <div class="hero-slider">
@@ -176,7 +174,7 @@
                 <a class="btn btn-primary" href="cs-page.html">Go to Components &amp; Styles</a>
               </div>
               <div class="col-lg-7 col-md-7 col-sm-7 animated">
-                <img class="pull-right" src="img/hero-slider/imac.png" width="689" height="659" alt="Components and Styles"/>
+                <%= image_tag "hero-slider/imac", class:"pull-right", width:"689", height:"659", alt:"Components and Styles" %>
               </div>
             </div>
             <div class="slide">
@@ -188,7 +186,7 @@
                 <a class="btn btn-primary" href="coming-soon.html">Go to Coming soon page</a>
               </div>
               <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
-                <img class="iphone" src="img/hero-slider/iphone.png" width="649" height="400" alt="Coming Soon Page"/>
+                <%= image_tag "hero-slider/iphone", class:"iphone", width:"649", height:"400", alt:"Coming Soon Page" %>
               </div>
             </div>
             <div class="slide">
@@ -200,7 +198,7 @@
               </div>
               <div class="col-lg-8 col-md-8 col-sm-8 animated fadeInRight">
                 <div class="video">
-                  <img src="img/hero-slider/macbook.png" width="782" height="422" alt=""/>
+                  <%= image_tag "hero-slider/macbook.png", width:"782", height:"422", alt:"" %>
                   <div class="vide-holder">
                     <iframe src="//player.vimeo.com/video/79036490?byline=0&amp;portrait=0&amp;color=ffeeac" width="720" height="405"></iframe>
                   </div>
@@ -209,14 +207,14 @@
             </div>
           </div>
         </div><!--Close Hero Slider-->
-      </div>      
+      </div>
     </section><!--Close Hero-->
 
 
 
 
 <%= yield %>
-    
+
 
 
 
@@ -229,17 +227,17 @@
         </div>
         <div class="row features">
           <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="feature-img"><img src="img/features/feature1.png" width="124" height="120" alt="Editable colors"/></div>
+            <div class="feature-img"><%= image_tag "features/feature1.png", width:"124", height:"120", alt:"Editable colors" %></div>
             <h3>Editable colors</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="feature-img"><img src="img/features/feature2.png" width="131" height="131" alt="All you need for start"/></div>
+            <div class="feature-img"><%= image_tag "features/feature2.png", width:"131", height:"131", alt:"All you need for start" %></div>
             <h3>All you need for start</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="feature-img"><img src="img/features/feature3.png" width="72" height="72" alt="Clean code"/></div>
+            <div class="feature-img"><%= image_tag "features/feature3.png", width:"72", height:"72", alt:"Clean code" %></div>
             <h3>Clean code</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo.</p>
           </div>
@@ -262,7 +260,7 @@
           <div class="tab-pane fade in active col-lg-12" id="clean-code">
             <div class="row">
               <div class="col-lg-6 col-md-6 animated fadeInLeft">
-                <img src="img/features/1.png" alt="Clean Code"/>
+                <%= image_tag "features/1.png", alt:"Clean Code" %>
               </div>
               <div class="col-lg-6 col-md-6 animated fadeInRight">
                 <div class="row">
@@ -296,7 +294,7 @@
           <div class="tab-pane fade col-lg-12" id="font-icons">
             <div class="row">
               <div class="col-lg-6 col-md-6 animated fadeInLeft">
-                <img src="img/features/2.png" alt="Font Icons"/>
+                <%= image_tag "features/2.png", alt:"Font Icons" %>
               </div>
               <div class="col-lg-6 col-md-6 animated fadeInRight">
                 <div class="row">
@@ -323,7 +321,7 @@
           <div class="tab-pane fade col-lg-12" id="more">
             <div class="row">
               <div class="col-lg-6 col-md-6 animated fadeInLeft">
-                <img class="img-center" src="img/features/3.png" alt="More Features"/>
+                <%= image_tag "features/3", class:"img-center", alt:"More Features" %>
               </div>
               <div class="col-lg-6 col-md-6 animated fadeInRight">
                 <div class="row">
@@ -356,7 +354,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Charts-->
     <section class="page-block less-space-bottom" id="charts">
       <div class="container">
@@ -406,7 +404,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Gallery-->
     <section class="page-block" id="gallery">
       <div class="container">
@@ -418,49 +416,49 @@
           <ul class="gallery">
             <li>
               <a href="#" data-largesrc="img/gallery/1.jpg" data-title="City Center" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_1.png" alt="thumb01"/>
+                <%= image_tag "gallery/th_1.png", alt:"thumb01" %>
                 <span class="img-caption">City Center</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/2.jpg" data-title="Beach Van" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_2.png" alt="thumb02"/>
+                <%= image_tag "gallery/th_2.png", alt:"thumb02" %>
                 <span class="img-caption">Beach Van</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/3.jpg" data-title="Tea Pot" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_3.png" alt="thumb03"/>
+                <%= image_tag "gallery/th_3.png", alt:"thumb03" %>
                 <span class="img-caption">Tea Pot</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/4.jpg" data-title="Railway Station" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_4.png" alt="thumb04"/>
+                <%= image_tag "gallery/th_4.png", alt:"thumb04" %>
                 <span class="img-caption">Railway Station</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/5.jpg" data-title="City Center" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_5.png" alt="thumb05"/>
+                <%= image_tag "gallery/th_5.png", alt:"thumb05" %>
                 <span class="img-caption">City Center</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/6.jpg" data-title="Bicycle Parking" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_6.png" alt="thumb06"/>
+                <%= image_tag "gallery/th_6.png", alt:"thumb06" %>
                 <span class="img-caption">Bicycle Parking</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/7.jpg" data-title="London Boat" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_7.png" alt="thumb07"/>
+                <%= image_tag "gallery/th_7.png", alt:"thumb07" %>
                 <span class="img-caption">London Boat</span>
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/gallery/8.jpg" data-title="Apple Air" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
-                <img src="img/gallery/th_8.png" alt="thumb08"/>
+                <%= image_tag "gallery/th_8.png", alt:"thumb08" %>
                 <span class="img-caption">Apple Air</span>
               </a>
             </li>
@@ -468,7 +466,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Application Wizard-->
     <section class="page-block" id="wizard">
       <div class="container">
@@ -489,9 +487,9 @@
                   <a class="step-link right" href="#step03" data-toggle="tab"><span class="status"></span></a>
                 </div>
               </div>
-              
+
               <form method="post" id="wizard-form" class="wizard-form body" role="form">
-              
+
                 <!--Step 1-->
                 <div class="wizard-step fade in active" id="step01">
                 <div class="tab-links-wrap">
@@ -591,7 +589,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!--Step 2-->
                 <div class="wizard-step fade" id="step02">
                   <div class="tab-links-wrap">
@@ -650,7 +648,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!--Step 3-->
                 <div class="wizard-step fade" id="step03">
                   <div class="tab-links-wrap">
@@ -705,7 +703,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="wizard-footer group">
                   <div class="buttons">
                     <a class="btn btn-primary prev-tab hidden" href="#">Back</a>
@@ -719,8 +717,8 @@
         </div>
       </div>
     </section>
-    
-    <!--Pricing Plans--> 
+
+    <!--Pricing Plans-->
     <section class="page-block" id="pricing">
       <div class="container">
         <div class="row page-header">
@@ -779,7 +777,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--FAQ-->
     <section class="page-block faq" id="faq">
       <div class="container">
@@ -789,7 +787,7 @@
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-4 col-sm-4">
-            <img class="img-center" src="img/faq-icon.png" alt="FAQ"/>
+            <%= image_tag "faq-icon", class:"img-center", alt:"FAQ" %>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8">
             <div class="panel-group" id="accordion-faq">
@@ -828,7 +826,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Testimonials-->
     <section class="page-block color" id="testimonials">
       <div class="container">
@@ -850,7 +848,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-4">
-                      <img class="img-circle img-center" src="img/testimonials/dirk.png" width="192" height="192" alt="Dexter Dirk"/>
+                      <%= image_tag "testimonials/dirk", class:"img-circle img-center", width:"192", height:"192", alt:"Dexter Dirk" %>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-8">
                       <blockquote>
@@ -865,7 +863,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-4">
-                      <img class="img-circle img-center" src="img/testimonials/roe.png" width="192" height="192" alt="Richard Roe"/>
+                      <%= image_tag "testimonials/roe", class:"img-circle img-center", width:"192", height:"192", alt:"Richard Roe" %>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-8">
                       <blockquote>
@@ -880,7 +878,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-4">
-                      <img class="img-circle img-center" src="img/testimonials/doe.png" width="192" height="192" alt="Jonathan Doe"/>
+                      <%= image_tag "testimonials/doe", class:"img-circle img-center", width:"192", height:"192", alt:"Jonathan Doe" %>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-8">
                       <blockquote>
@@ -896,7 +894,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Mobile Apps-->
     <section class="page-block mobile-apps" id="apps">
       <div class="container">
@@ -913,7 +911,7 @@
                     <h3>Run on any device</h3>
                   </div>
                   <div class="col-lg-3 col-md-3">
-                    <img class="img-center" src="img/apps-icon.png" alt="Mobile Apps"/>
+                    <%= image_tag "apps-icon", class:"img-center", alt:"Mobile Apps" %>
                   </div>
                 </div>
                 <div class="row">
@@ -932,12 +930,12 @@
             </div>
           </div>
           <div class="col-lg-8 col-md-8">
-            <img class="double-space-top" src="img/tablet.png" alt="Mobile Apps"/>
+            <%= image_tag "tablet", class:"double-space-top", alt:"Mobile Apps" %>
           </div>
         </div>
       </div>
     </section>
-    
+
     <!--Team-->
     <section class="page-block team" id="team">
       <div class="container">
@@ -947,7 +945,7 @@
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3">
-            <img class="img-circle-thumbnail img-center" src="img/team/dirk.jpg" alt="Dexter Dirk"/>
+            <%= image_tag "team/dirk", class:"img-circle-thumbnail img-center", alt:"Dexter Dirk" %>
             <h3>Dexter Dirk</h3>
             <p>Senior designer</p>
             <div class="social-networks">
@@ -956,7 +954,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3">
-            <img class="img-circle-thumbnail img-center" src="img/team/roe.jpg" alt="Alexander Roe"/>
+            <%= image_tag "team/roe", class:"img-circle-thumbnail img-center", alt:"Alexander Roe" %>
             <h3>Alexander Roe</h3>
             <p>Financial director</p>
             <div class="social-networks">
@@ -965,7 +963,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3">
-            <img class="img-circle-thumbnail img-center" src="img/team/davis.jpg" alt="Susanna Davis"/>
+            <%= image_tag "team/davis", class:"img-circle-thumbnail img-center", alt:"Susanna Davis" %>
             <h3>Susanna Davis</h3>
             <p>Art director</p>
             <div class="social-networks">
@@ -974,7 +972,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3">
-            <img class="img-circle-thumbnail img-center" src="img/team/doe.jpg" alt="Jonathan Doe"/>
+            <%= image_tag "team/doe", class:"img-circle-thumbnail img-center", alt:"Jonathan Doe" %>
             <h3>Jonathan Doe</h3>
             <p>Technical support</p>
             <div class="social-networks">
@@ -985,7 +983,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Contacts-->
     <section class="page-block contacts" id="contacts">
       <div class="container">
@@ -1000,7 +998,7 @@
                 <h3>What we do</h3>
               </div>
               <div class="col-lg-3 col-md-3">
-                <img class="img-center" src="img/contacts/man.png" alt="About Us"/>
+                <%= image_tag "contacts/man", class:"img-center", alt:"About Us" %>
               </div>
             </div>
             <div class="row">
@@ -1015,7 +1013,7 @@
                 <h3>Adress</h3>
               </div>
               <div class="col-lg-4 col-md-4">
-                <img class="img-center" src="img/contacts/map.png" alt="Adress"/>
+                <%= image_tag "contacts/map", class:"img-center", alt:"Adress" %>
               </div>
             </div>
             <div class="row">
@@ -1028,7 +1026,7 @@
                 <h3>Contacts</h3>
               </div>
               <div class="col-lg-4 col-md-4">
-                <img class="img-center" src="img/contacts/phone.png" alt="Contacts"/>
+                <%= image_tag "contacts/phone", class:"img-center", alt:"Contacts" %>
               </div>
             </div>
             <div class="row">
@@ -1043,7 +1041,7 @@
                 <h3>Contact us</h3>
               </div>
               <div class="col-lg-4 col-md-4">
-                <img class="img-center" src="img/contacts/plan.png" alt="Adress"/>
+                <%= image_tag "contacts/plan", class:"img-center", alt:"Adress" %>
               </div>
             </div>
             <div class="row">
@@ -1071,7 +1069,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Social Networks-->
     <section class="page-block" id="social">
       <div class="container">
@@ -1093,7 +1091,7 @@
         </div>
       </div>
     </section>
-    
+
     <!--Footer-->
     <footer class="footer">
       <div class="container">
@@ -1104,7 +1102,7 @@
           </div>
         </div>
         <div class="row">
-        
+
           <!-- Begin MailChimp Signup Form -->
           <form class="subscribe-form validate" action="http://8guild.us3.list-manage.com/subscribe/post?u=168a366a98d3248fbc35c0b67&amp;id=73d49e0d23" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
             <div class="form-group col-lg-7 col-md-8 col-sm-8 col-lg-offset-1">
@@ -1116,7 +1114,7 @@
             <div class="form-group col-lg-3 col-md-4 col-sm-4"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-block"></div>
           </form>
           <!-- Close MailChimp Signup Form -->
-          
+
         </div>
         <div class="row">
           <div class="col-lg-12">
@@ -1125,12 +1123,12 @@
         </div>
       </div>
     </footer>
-    
+
     <!--Scroll To Top Button-->
     <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
-    
+
     <!--Google Remarketing Tag (Placed before </body>)-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
     /* <![CDATA[ */
     var google_conversion_id = 966923546;
     var google_custom_params = window.google_tag_params;
@@ -1138,12 +1136,12 @@
     /* ]]> */
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-    </script>
+    </script> -->
     <noscript>
     <div style="display:inline;">
     <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/966923546/?value=0&amp;guid=ON&amp;script=0"/>
     </div>
     </noscript>
-    
+
   </body><!--Close Body-->
 </html>

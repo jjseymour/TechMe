@@ -39,7 +39,11 @@ gem 'bootstrap-sass'
 gem 'faker'
 gem 'font-awesome-rails'
 gem 'modernizr-rails'
+
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'google-api-client', '0.8.2', :require => 'google/api_client'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

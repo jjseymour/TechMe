@@ -37,6 +37,8 @@ gem 'redis'
 
 gem 'bootstrap-sass'
 gem 'faker'
+gem 'font-awesome-rails'
+gem 'modernizr-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -38,6 +38,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (7.0.0)
     autoprefixer-rails (6.3.6.2)
       execjs
@@ -47,6 +48,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    buftok (0.2.0)
     builder (3.2.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -58,6 +60,8 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.6.3)
@@ -69,6 +73,15 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.4)
+    http (0.9.9)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -119,6 +132,11 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.4.0)
+    rMeetup (2.1.0)
+      buftok (~> 0.2)
+      http (~> 0.7)
+      http_parser.rb (~> 0.6)
+      json (~> 1.8)
     rack (2.0.0.rc1)
       json
     rack-test (0.6.3)
@@ -181,6 +199,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -206,6 +227,7 @@ DEPENDENCIES
   pg (~> 0.15)
   pry
   puma
+  rMeetup
   rails (>= 5.0.0.beta4, < 5.1)
   redis
   sass-rails

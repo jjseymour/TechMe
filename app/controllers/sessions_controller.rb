@@ -6,7 +6,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username])
+    binding.pry
+    if login_url(params[:username], params[:password])
+      redirect_back fallback_location: users_path
+      @user = User.find_by(username: params[:user][:username])
+    else
+      flash.now.alert = "Login failed."
+      render action: :new
+    end
+
     if @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
     #What data comes back from OmniAuth?     

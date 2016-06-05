@@ -1,2 +1,19 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<h1>Showing jobs for <% @current_user.languages.each do |language| %>
+          <%= language["title"] %>
+          <% end %></h1>
+
+<h2>By Company</h2>
+<% @jobs["employers"].each do |job| %>
+  <h3>Company Name: </h3><p><%= job["name"] %></p>
+  <h4>Number of jobs: </h4><p><%= job["numJobs"] %></p>
+  <br><br>
+<% end %>
+
+<h2>By Job Title</h2>
+<% @jobs["jobTitles"].each do |job| %>
+  <h3>Job Title: </h3><p><%= job["jobTitle"] %></p>
+  <h4>Number of jobs: </h4><p><%= job["numJobs"] %></p>
+  <br><br>
+<% end %>
+
+<a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>

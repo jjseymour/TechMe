@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @job = Job.new
+    @event = Event.new
   end
 
   def edit

@@ -14,9 +14,15 @@ class Job < ApplicationRecord
 
     # GitHub API
     languages.each do |language|
-      jobs << github_call(location, time, language)
+      jobs << format_sections(github_call(location, time, language))
     end
     jobs
+  end
+
+  def self.format_sections(json)
+    json.each do |job|
+      job["created_at"] = DateTime.parse(job["created_at"]).strftime("%A, %d %b %Y %l:%M %p")
+    end
   end
 
   private

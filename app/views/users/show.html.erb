@@ -1,3 +1,9 @@
+
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+
 <h1>Languanges</h1>
 <% @current_user.languages.each do |language| %>
   <h2><%= language.title %></h2>
@@ -41,3 +47,4 @@
 
   <%= submit_tag "New Job Search", class: "form_submit btn btn-primary btn-lg" %>
 <% end %>
+

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources 'jobs', only: [:index, :show]
 
+  post 'job_search', to: 'jobs#create'
+
   resources 'events', only: [:index, :show]
 
   resources 'sessions', only: :create

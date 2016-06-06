@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   end
 
   def google_auth
-    #session[:user_id] = User.last.id 
+    #session[:user_id] = User.last.id
     @user = User.find(session[:user_id])
     @user.add_omniauth_params(request.env["omniauth.auth"])
-    redirect_to user_path(@user) 
+    redirect_to user_path(@user)
 
     # @auth = request.env["omniauth.auth"]
     # #Use the token from the data to request a list of calendars
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     #@user = User.from_omniauth(request.env["omniauth.auth"])
 
     @user = User.find_by(username: params[:user][:username])
-    
+
     # if login_url(params[:username], params[:password])
     #   redirect_back fallback_location: users_path
     #   @user = User.find_by(username: params[:user][:username])
@@ -39,8 +39,8 @@ class SessionsController < ApplicationController
 
     if @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-    #What data comes back from OmniAuth?     
-    
+    #What data comes back from OmniAuth?
+
       redirect_to user_path(@user)
     else
       flash[:alert] = "Login Failed, bro"
@@ -51,7 +51,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:current_org] = nil
-    redirect_to login_path
+    redirect_to root_path
   end
 
   private

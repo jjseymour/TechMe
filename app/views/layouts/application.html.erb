@@ -59,7 +59,7 @@
   <body class="space-top">
 
     <!--Color Switcher-->
-    <div class="color-switcher group animated">
+    <!-- <div class="color-switcher group animated">
       <div class="toggle"><i class="icon-paint-format"></i></div>
       <div class="color">
         <a class="current" style="background-color:#ff6f69;" href="#" data-color="default"></a>
@@ -93,129 +93,17 @@
         <a style="background-color:#838dcf;" href="#" data-color="838dcf"></a>
         <span>#838dcf</span>
       </div>
-    </div>
+    </div> -->
 
     <!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>
 
-    <!--Login Modal-->
-    <div class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Login here</h4>
-          </div>
-          <div class="modal-body">
-            <form class="login-form" role="form">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
-              </div>
-              <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <%= render 'layouts/navbar' %>
 
-    <!--Header-->
-    <header class="stiky-header">
-      <div class="container group">
-        <a class="logo" href="index.html"><%= image_tag "logo-dark.png", alt:"Ultima" %></a>
-        <a class="logo-mobile" href="index.html"><%= image_tag "logo-mobile.png", alt:"Ultima" %></a>
-        <div class="navi-toggle group">
-          <span class="dot"></span><span class="line"></span>
-          <span class="dot"></span><span class="line"></span>
-          <span class="dot"></span><span class="line"></span>
-          <span class="dot"></span><span class="line"></span>
-        </div>
-        <a class="btn btn-primary btn-login" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
-        <nav class="main-navi">
-          <ul>
-            <li class="active"><a class="scroll-up" href="#">Home</a></li>
-            <li class="has-dropdown"><a class="scroll" href="#features">Features<i class="fa fa-caret-down"></i></a>
-              <ul class="dropdown">
-                <li><a href="#">Submenu Item</a></li>
-                <li><a href="#">Submenu Item</a></li>
-                <li><a href="#">Submenu Item</a></li>
-                <li><a href="#">Submenu Item</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown"><a href="coming-soon.html">Coming soon<i class="fa fa-caret-down"></i></a>
-              <ul class="dropdown">
-                <li><a href="#">Submenu Item</a></li>
-                <li><a href="#">Submenu Item</a></li>
-                <li><a href="#">Submenu Item</a></li>
-              </ul>
-            </li>
-            <li><a href="cs-page.html">Components &amp; Styles</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- Hero -->
+    <%#= render 'home/show' %>
 
-    <!--Hero Unit with Slider-->
-    <section class="hero">
-      <div class="container">
-
-        <!--Hero Slider-->
-        <div class="row">
-          <div class="hero-slider">
-            <div class="slide first-slide">
-              <div class="col-lg-5 col-md-5 col-sm-5 animated">
-                <h2 style="margin-top:50px;" class="text-light text-left">Components &amp; Styles</h2>
-                <p>Check Ultima Components &amp; Styles page for more features and components.</p>
-                <p>Wish to extend your landing page? We offer you simple copy and paste solution with new Components &amp; Styles page.</p>
-                <a class="btn btn-primary" href="cs-page.html">Go to Components &amp; Styles</a>
-              </div>
-              <div class="col-lg-7 col-md-7 col-sm-7 animated">
-                <%= image_tag "hero-slider/imac", class:"pull-right", width:"689", height:"659", alt:"Components and Styles" %>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="col-lg-5 col-md-5 col-sm-5 animated fadeInUp">
-                <h2 style="margin-top:50px;" class="text-light text-left">Coming Soon Page</h2>
-                <p>Have a look at Ultima Coming soon page!</p>
-                <p>While your landing page is under construction show your visitors beautiful coming soon page with the coundown and subscription form.</p>
-                <p>And they always stay connected.</p>
-                <a class="btn btn-primary" href="coming-soon.html">Go to Coming soon page</a>
-              </div>
-              <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
-                <%= image_tag "hero-slider/iphone", class:"iphone", width:"649", height:"400", alt:"Coming Soon Page" %>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="col-lg-4 col-md-4 col-sm-4 animated fadeInDown">
-                <h2 style="margin-top:70px;" class="text-light text-left">Some Heading</h2>
-                <p>You shall not pass this theme!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                <a class="btn btn-primary" href="#">Push it!</a>
-              </div>
-              <div class="col-lg-8 col-md-8 col-sm-8 animated fadeInRight">
-                <div class="video">
-                  <%= image_tag "hero-slider/macbook.png", width:"782", height:"422", alt:"" %>
-                  <div class="vide-holder">
-                    <iframe src="//player.vimeo.com/video/79036490?byline=0&amp;portrait=0&amp;color=ffeeac" width="720" height="405"></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!--Close Hero Slider-->
-      </div>
-    </section><!--Close Hero-->
-
-
-
-
-<%= yield %>
-
-
+    <%= yield %>
 
 
     <!--Features-->

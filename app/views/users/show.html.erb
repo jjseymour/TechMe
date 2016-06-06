@@ -38,8 +38,8 @@
 <%= form_tag jobs_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
 
-  <% @current_user.languages.each do |language| %>
-    <%= check_box_tag 'language_selected[]', language.id, class: "iCheck-helper" %>
+  <% Language.all.each do |language| %>
+    <%= check_box_tag 'language_selected[]', language.id, class: "iCheck-helper", checked: false %>
     <%= language.title %>
   <% end %>
 
@@ -47,4 +47,3 @@
 
   <%= submit_tag "New Job Search", class: "form_submit btn btn-primary btn-lg" %>
 <% end %>
-

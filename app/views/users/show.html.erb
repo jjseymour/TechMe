@@ -1,4 +1,48 @@
+
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+
+<h1>Languanges</h1>
+<% @current_user.languages.each do |language| %>
+  <h2><%= language.title %></h2>
+
+  <h3>Current Jobs</h3>
+  <% @current_user.jobs.each do |job| %>
+    <h4><%= job.title %></h4>
+    <h5>Company: <%= job.company %></h5>
+    <h5>Position: <%= job.position %></h5>
+    <h5>Salary: <%= job.salary %></h5>
+    <h5>Date Posted: <%= job.date_posted %></h5>
+    <h5>Description: <%= job.description %></h5>
+    <h5>Language: <%= job.language.title %></h5>
+  <% end %>
+
+  <h3>Current Events</h3>
+  <% @current_user.events.each do |event| %>
+    <h4><%= event.name %></h4>
+    <h5>RSVP: <%= event.rsvp %></h5>
+    <h5>Location: <%= event.location %></h5>
+    <h5>Paid Event? <%= event.paid_event %></h5>
+    <h5>Price: <%= event.price %></h5>
+    <h5>Members Going: <%= event.members %></h5>
+    <h5>Language: <%= event.language.title %></h5>
+  <% end %>
+<% end %>
+
+<h1>New Event Search</h1>
+
+<h1>New Job Search</h1>
+
+<%= form_tag jobs_path, method: :get do %>
+  <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
+
+  <% @current_user.languages.each do |language| %>
+    <%= check_box_tag 'language_selected[]', language.id %>
+    <%= language.title %>
+  <% end %>
+
+  <%= submit_tag "New Job Search", class: "form_submit" %>
+<% end %>
+

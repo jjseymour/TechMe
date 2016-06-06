@@ -1,0 +1,250 @@
+<!--Application Wizard-->
+<section class="page-block" id="wizard">
+  <div class="container">
+    <div class="row page-header">
+      <h2>Application wizard</h2>
+      <span>Subtext for header</span>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="wizard">
+          <div class="header">
+            <h3>Application Wizard</h3>
+            <div class="progress-bar group">
+              <div class="overlay"></div>
+              <div class="line"></div>
+              <a class="step-link left current" href="#step01" data-toggle="tab"><span class="status"></span></a>
+              <a class="step-link middle" href="#step02" data-toggle="tab"><span class="status"></span></a>
+              <a class="step-link right" href="#step03" data-toggle="tab"><span class="status"></span></a>
+            </div>
+          </div>
+
+          <form method="post" id="wizard-form" class="wizard-form body" role="form">
+
+            <!--Step 1-->
+            <div class="wizard-step fade in active" id="step01">
+            <div class="tab-links-wrap">
+              <div class="overlay"></div>
+              <div class="row tab-links">
+               <div class="tab-link active col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <a href="#contact" data-toggle="tab"><i class="fa fa-user"></i><span>Contact details</span></a>
+                </div>
+                <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <a href="#background" data-toggle="tab"><i class="fa fa-suitcase"></i><span>Background</span></a>
+                </div>
+                <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <a href="#id" data-toggle="tab"><i class="fa fa-check-circle-o"></i><span>ID Proof</span></a>
+                </div>
+                <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <a href="#agreement" data-toggle="tab"><i class="fa fa-file-text"></i><span>Agreement</span></a>
+                </div>
+              </div>
+            </div>
+              <div class="tabs">
+                <div class="tab row fade in active" id="contact">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="name">Name (required)</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="email">Email (required)</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="adress">Adress</label>
+                        <input type="text" name="adress" class="form-control" id="adress" placeholder="Enter your adress">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="phone">Phone (required numbers only)</label>
+                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter your phone">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab row fade" id="background">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="education">Educational background</label>
+                        <textarea class="form-control" name="education" id="education" rows="8" placeholder="Describe your educational background"></textarea>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="profession">Professional background</label>
+                        <textarea class="form-control" name="profession" id="profession" rows="8" placeholder="Describe your professional background"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab row fade" id="id">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="security">Social security no (required numbers only)</label>
+                        <input type="text" name="security" class="form-control" id="security" placeholder="Enter social security no" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="exp_date">ID expiry date</label>
+                        <input type="text" name="exp_date" class="form-control" id="exp_date" placeholder="Enter ID expiry date">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab row fade" id="agreement">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="agreem">Agreement no</label>
+                          <input type="text" name="agreem" class="form-control" id="agreem" placeholder="Enter agreement no">
+                        </div>
+                        <div class="form-group">
+                          <div class="checkbox custom">
+                            <label>
+                              <input class="icheckbox" name="terms" type="checkbox">I have read and agree to the terms of service
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                        <label for="education">Agreement</label>
+                        <textarea class="form-control" name="agr_text" id="agr_text" rows="8" placeholder="Write agreement here"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Step 2-->
+            <div class="wizard-step fade" id="step02">
+              <div class="tab-links-wrap">
+                <div class="overlay"></div>
+                <div class="row tab-links">
+                  <div class="tab-link active col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a href="#tab01" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 01</a>
+                  </div>
+                  <div class="tab-link col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a href="#tab02" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 02</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tabs">
+                <div class="tab row fade in active" id="tab01">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                        <label for="field01">Field 01</label>
+                        <input type="text" name="field01" class="form-control" id="field01" placeholder="Placeholder">
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                        <label for="field02">Field 02</label>
+                        <input type="text" name="field02" class="form-control" id="field02" placeholder="Placeholder">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                        <label for="textarea01">Textarea (required)</label>
+                        <textarea class="form-control" name="textarea01" id="textarea01" rows="8" placeholder="Placeholder" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab row fade" id="tab02">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="field03">Field 03</label>
+                          <input type="text" name="field03" class="form-control" id="field03" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                          <label for="field04">Field 04</label>
+                          <input type="text" name="field04" class="form-control" id="field04" placeholder="Placeholder">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                          <label for="textarea02">Textarea</label>
+                          <textarea class="form-control" name="textarea02" id="textarea02" rows="8" placeholder="Placeholder"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Step 3-->
+            <div class="wizard-step fade" id="step03">
+              <div class="tab-links-wrap">
+                <div class="overlay"></div>
+                <div class="row tab-links">
+                  <div class="tab-link active col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a href="#tab03" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 03</a>
+                  </div>
+                  <div class="tab-link col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a href="#tab04" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 04</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tabs">
+                <div class="tab row fade in active" id="tab03">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="field05">Field 05</label>
+                          <input type="text" name="field05" class="form-control" id="field05" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                          <label for="field06">Field 06</label>
+                          <input type="text" name="field06" class="form-control" id="field06" placeholder="Placeholder">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab row fade" id="tab04">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="field07">Field 07</label>
+                          <input type="text" name="field07" class="form-control" id="field07" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                          <label for="field08">Field 08</label>
+                          <input type="text" name="field08" class="form-control" id="field08" placeholder="Placeholder">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                          <label for="textarea03">Textarea03</label>
+                          <textarea class="form-control" name="textarea03" id="textarea03" rows="8" placeholder="Placeholder"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-footer group">
+              <div class="buttons">
+                <a class="btn btn-primary prev-tab hidden" href="#">Back</a>
+                <a class="btn btn-primary next-tab" href="#">Continue</a>
+                <input class="btn btn-primary hidden" type="submit" id="submit-wizard" value="Submit form">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

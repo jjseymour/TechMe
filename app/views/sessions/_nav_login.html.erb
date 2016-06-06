@@ -9,21 +9,16 @@
       <div class="modal-body">
         <% @user = User.new %>
         <%= form_for(@user, url: sessions_path, class: "login-form", role: "form") do |f| %>
-        <!-- <form class="login-form" role="form"> -->
           <div class="form-group">
             <label for="username">Username</label>
             <%= f.text_field :username, class: "form-control", placeholder: "Enter Username", required: true %>
-            <!-- <input type="text" class="form-control" id="username" placeholder="Enter Username" required> -->
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <%= f.text_field :password, class: "form-control", placeholder: "Enter Password", required: true %>
-            <!-- <input type="password" class="form-control" id="password" placeholder="Enter Password" required> -->
+            <%= f.text_field :password, class: "form-control", type: "password", placeholder: "Enter Password", required: true %>
           </div>
           <%= f.submit "Login", class: "btn btn-primary" %>
-          <!-- <button type="submit" class="btn btn-primary">Login</button> -->
           <% end %>
-        <!-- </form> -->
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

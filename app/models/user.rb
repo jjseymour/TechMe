@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  def add_omniauth_params(auth_hash)
+  def add_omniauth_params(auth)
     #binding.pry 
-    update(provider_uid: auth_hash.uid) unless provider_uid
-    update(g_access_token: auth_hash.credentials.token, g_refresh_token: auth_hash.credentials.refresh_token)
+    update(provider_uid: auth.uid) unless provider_uid
+    update(g_access_token: auth.credentials.token, g_refresh_token: auth.credentials.refresh_token) if provider_uid == auth.uid
   end
 
 end

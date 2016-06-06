@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def google_auth
-    session[:user_id] = User.last.id 
+    #session[:user_id] = User.last.id 
     @user = User.find(session[:user_id])
     @user.add_omniauth_params(request.env["omniauth.auth"])
     redirect_to user_path(@user) 

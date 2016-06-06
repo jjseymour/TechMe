@@ -2,23 +2,34 @@
                        <%= language["title"] %>
                      <% end %></h1>
 
-<h2>By Language</h2>
-<% @jobs.each do |job| %>
-  <h3>Job Title: </h3><p><%= job["title"] %></p>
-  <h3>Company Name: </h3><p><%= job["company"] %></p>
-  <h3>Location: </h3><p><%= job["location"] %></p>
-  <h3>Description: </h3><p><%= job["description"].html_safe %></p>
-  <h3>Position Length: </h3><p><%= job["type"] %></p>
-  <h3>Posted On: </h3><p><%= job["created_at"] %></p>
-  <h3>How to apply: </h3><p><%= job["how_to_apply"] %></p>
-  <br><br>
-<% end %>
-
-<!-- <h2>By Job Title</h2>
-<%# @jobs["jobTitles"].each do |job| %>
-  <h3>Job Title: </h3><p><%#= job["jobTitle"] %></p>
-  <h4>Number of jobs: </h4><p><%#= job["numJobs"] %></p>
-  <br><br> -->
-<%# end %>
-
-<!-- <a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a> -->
+<div class="row">
+  <div class="col-lg-8 col-md-10">
+    <div class="panel-group" id="accordion">
+      <% num = 1 %>
+      <% @jobs.each do |job| %>
+        <div class="panel">
+          <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" aria-expanded="false">
+            Job Title: <%= job["title"] %>
+            <div class="indicator">
+              <div class="icon">
+                <span class="hr-line"></span>
+                <span class="vr-line"></span>
+              </div>
+            </div>
+          </a>
+          <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
+            <div class="panel-body">
+              <h3>Company Name: </h3><p><%= job["company"] %></p>
+              <h3>Location: </h3><p><%= job["location"] %></p>
+              <h3>Description: </h3><p><%= job["description"].html_safe %></p>
+              <h3>Position Length: </h3><p><%= job["type"] %></p>
+              <h3>Posted On: </h3><p><%= job["created_at"] %></p>
+              <h3>How to apply: </h3><p><%= job["how_to_apply"].html_safe %></p>
+            </div>
+          </div>
+        </div>
+        <% num += 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>

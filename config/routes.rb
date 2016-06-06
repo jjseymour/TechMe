@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
 
+  get "/auth/:provider/callback" => "sessions#google_auth"
+
   resources 'home', only: :show
 
   get 'signup', to: 'registrations#new', as: 'new_registration'

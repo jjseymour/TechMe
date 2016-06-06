@@ -29,13 +29,26 @@
 
 <h1>New Event Search</h1>
 
+<%= form_tag events_path, method: :get do %>
+  <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
+
+  <% Language.all.each do |language| %>
+    <%= check_box_tag 'language_selected[]', language.title, false, class: "iCheck-helper" %>
+    <%= language.title %>
+  <% end %>
+
+  <br><br>
+
+  <%= submit_tag "New Event Search", class: "form_submit btn btn-primary btn-lg" %>
+<% end %>
+
 <h1>New Job Search</h1>
 
 <%= form_tag jobs_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
 
   <% Language.all.each do |language| %>
-    <%= check_box_tag 'language_selected[]', language.id, class: "iCheck-helper", checked: false %>
+    <%= check_box_tag 'language_selected[]', language.id, false, class: "iCheck-helper" %>
     <%= language.title %>
   <% end %>
 

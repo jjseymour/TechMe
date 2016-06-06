@@ -10,7 +10,7 @@
   <h3>Description: </h3><p><%= job["description"].html_safe %></p>
   <h3>Position Length: </h3><p><%= job["type"] %></p>
   <h3>Posted On: </h3><p><%= job["created_at"] %></p>
-  <h3>How to apply: </h3><p><%= job["how_to_apply"] %></p>
+  <h3>How to apply: </h3><p><%= job["how_to_apply"].html_safe %></p>
   <br><br>
 <% end %>
 

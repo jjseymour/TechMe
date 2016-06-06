@@ -7,10 +7,10 @@
     <div class="panel-group" id="accordion">
       <% num = 1 %>
       <% @events.each do |event| %>
-<% binding.pry %>
+ 
         <div class="panel">
           <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" aria-expanded="false">
-            Event Name: <%= job["title"] %>
+            Event Name: <%= event["name"] %>
             <div class="indicator">
               <div class="icon">
                 <span class="hr-line"></span>
@@ -20,12 +20,10 @@
           </a>
           <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
             <div class="panel-body">
-              <h3>Company Name: </h3><p><%= job["company"] %></p>
-              <h3>Location: </h3><p><%= job["location"] %></p>
-              <h3>Description: </h3><p><%= job["description"].html_safe %></p>
-              <h3>Position Length: </h3><p><%= job["type"] %></p>
-              <h3>Posted On: </h3><p><%= job["created_at"] %></p>
-              <h3>How to apply: </h3><p><%= job["how_to_apply"].html_safe %></p>
+              <h3>Event Name: </h3><p><%= event["name"] %></p>
+              <h3>Location: </h3><p><%= event["city"] %></p>
+              <h3>Description: </h3><p><%= event["description"].html_safe %></p>
+              <h3>How to attend:</h3><p><a href="<%= event["link"] %>"> Attend This Meetup</a></p>
             </div>
           </div>
         </div>

@@ -6,8 +6,8 @@ class Event < ApplicationRecord
   def self.get_events(location, languages)
     events = []
 
-    languages.each do |e|
-      events << meetup_call(location, e)
+    languages.each do |language|
+      events << meetup_call(location, language)
     end
     events 
   end
@@ -15,6 +15,6 @@ class Event < ApplicationRecord
   private
 
   def self.meetup_call(location, language)
-    JSON.parse(RestClient.get("https://api.meetup.com/find/groups?key=#{ENV["meetup_app_key"]}&sign=true&photo-host=public&country=USA&location=New York&text=ruby &radius=5&fields=ruby&category=34&page=20"))
+    JSON.parse(RestClient.get("https://api.meetup.com/find/groups?key=#{ENV["meetup_app_key"]}&sign=true&photo-host=public&country=USA&upcoming_events=true&location=#{location}&text=#{language} &radius=5&fields=ruby&category=34&page=20"))
   end
 end

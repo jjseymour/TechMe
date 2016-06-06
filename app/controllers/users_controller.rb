@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # binding.pry
+      
       flash[:alert] = "Thank you for joining TechMe, bro. Your account has be activated. Please login to continue."
       redirect_to login_path
     else

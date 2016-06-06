@@ -40,6 +40,9 @@ gem 'faker'
 gem 'font-awesome-rails'
 gem 'modernizr-rails'
 gem 'omniauth-google-oauth2'
+gem 'figaro'
+
+gem 'rest-client'
 
 gem 'rMeetup'
 

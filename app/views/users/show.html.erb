@@ -33,7 +33,7 @@
   <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
 
   <% Language.all.each do |language| %>
-    <%= check_box_tag 'language_selected[]', language.title, class: "iCheck-helper" %>
+    <%= check_box_tag 'language_selected[]', language.title, false, class: "iCheck-helper" %>
     <%= language.title %>
   <% end %>
 
@@ -48,7 +48,7 @@
   <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
 
   <% Language.all.each do |language| %>
-    <%= check_box_tag 'language_selected[]', language.id, class: "iCheck-helper" %>
+    <%= check_box_tag 'language_selected[]', language.id, false, class: "iCheck-helper" %>
     <%= language.title %>
   <% end %>
 

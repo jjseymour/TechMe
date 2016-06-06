@@ -1,20 +1,20 @@
-<%= form_for @user do |f| %>
+<%= form_for(@user, class: "login-form", role: "form") do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username, class: "form-control", placeholder: "Enter Username", required: true %>
+  </div>
 
-  <br><br>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.text_field :password, class: "form-control", type: "password", placeholder: "Enter Password", required: true %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation, class: "form-control", type: "password", placeholder: "Enter Password", required: true %>
+  </div>
 
-  <br><br>
-
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-
-  <br><br>
-
-  <%= f.submit %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
 
 <% end %>

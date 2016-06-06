@@ -1,0 +1,43 @@
+<%= render 'sessions/nav_login' %>
+
+<!--Header-->
+<header class="stiky-header">
+  <div class="container group">
+    <a class="logo" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", style: "height: 60px;", alt:"TechMe" %></a>
+    <a class="logo-mobile" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", alt:"TechMe" %></a>
+    <div class="navi-toggle group">
+      <span class="dot"></span><span class="line"></span>
+      <span class="dot"></span><span class="line"></span>
+      <span class="dot"></span><span class="line"></span>
+      <span class="dot"></span><span class="line"></span>
+    </div>
+
+    <% if @current_user %>
+      <a class="btn btn-primary btn-login" href="<%= logout_path %>" data-method="delete"><i class="icon-user"></i>Logout</a>
+    <% else %>
+      <a class="btn btn-primary btn-login" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
+    <% end %>
+
+    <nav class="main-navi">
+      <ul>
+        <li class="active"><a class="scroll-up" href="/">Home</a></li>
+        <li class="has-dropdown"><a class="scroll" href="#features">Features<i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu Item</a></li>
+            <li><a href="#">Submenu Item</a></li>
+            <li><a href="#">Submenu Item</a></li>
+            <li><a href="#">Submenu Item</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="coming-soon.html">Coming soon<i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu Item</a></li>
+            <li><a href="#">Submenu Item</a></li>
+            <li><a href="#">Submenu Item</a></li>
+          </ul>
+        </li>
+        <li><a href="<%= new_registration_path %>" data-method="get">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

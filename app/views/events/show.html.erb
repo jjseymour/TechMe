@@ -1,8 +1,11 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
 
-<% RMeetup::Client.api_key = ENV["meetup_app_key"] %>
-<% results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"}) %>
-<% results.each do |result| %>
-<%= puts result %>
-<% end %>
+
+
+
+<!-- # <% RMeetup::Client.api_key = ENV["meetup_app_key"] %>
+# <% results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"}) %>
+# <% results.each do |result| %>
+# <%= puts result %>
+# <% end %> -->

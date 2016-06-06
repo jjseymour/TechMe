@@ -5,13 +5,26 @@ class Job < ApplicationRecord
   belongs_to :language
 
   def self.get_jobs(location, time, languages)
+    jobs = []
+
+    # GlassDoor API
+    # languages.each do |language|
+    #   jobs << json_format(glassdoor_call(location, time, language))
+    # end
+
+    # GitHub API
     languages.each do |language|
-      glassdoor_call(location, time, language)
+      jobs << github_call(location, time, language)
     end
-    glassdoor_call["response"]
+    jobs
   end
 
   private
+
+  def self.github_call(location, time, language)
+    JSON.parse(RestClient.get("https://jobs.github.com/positions.json?description=#{language}&location=#{location}"))
+  end
+
   def self.glassdoor_call(location, time, language)
     JSON.parse(RestClient.get("http://api.glassdoor.com/api/api.htm?t.p=#{ENV["glassdoor_partner_id"]}&t.k=#{ENV["glassdoor_key"]}&userip=#{ip}&useragent=Chrome&format=json&v=1&action=jobs-stats&l=#{location}&fromAge=#{time}&radius=2&jc=29&q=#{language}&returnJobTitles=true&returnEmployers=true&admLevelRequested=1"))
   end

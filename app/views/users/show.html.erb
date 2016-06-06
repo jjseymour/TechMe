@@ -29,7 +29,7 @@
 
 <h1>New Job Search</h1>
 
-<%= form_tag job_search_path, method: :post do %>
+<%= form_tag jobs_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
 
   <% @current_user.languages.each do |language| %>

@@ -1,19 +1,24 @@
 <h1>Showing jobs for <% @current_user.languages.each do |language| %>
-          <%= language["title"] %>
-          <% end %></h1>
+                       <%= language["title"] %>
+                     <% end %></h1>
 
-<h2>By Company</h2>
-<% @jobs["employers"].each do |job| %>
-  <h3>Company Name: </h3><p><%= job["name"] %></p>
-  <h4>Number of jobs: </h4><p><%= job["numJobs"] %></p>
+<h2>By Language</h2>
+<% @jobs.each do |job| %>
+  <h3>Job Title: </h3><p><%= job["title"] %></p>
+  <h3>Company Name: </h3><p><%= job["company"] %></p>
+  <h3>Location: </h3><p><%= job["location"] %></p>
+  <h3>Description: </h3><p><%= job["description"] %></p>
+  <h3>Position Length: </h3><p><%= job["type"] %></p>
+  <h3>Posted On: </h3><p><%= job["created_at"] %></p>
+  <h3>How to apply: </h3><p><%= job["how_to_apply"] %></p>
   <br><br>
 <% end %>
 
-<h2>By Job Title</h2>
-<% @jobs["jobTitles"].each do |job| %>
-  <h3>Job Title: </h3><p><%= job["jobTitle"] %></p>
-  <h4>Number of jobs: </h4><p><%= job["numJobs"] %></p>
-  <br><br>
-<% end %>
+<!-- <h2>By Job Title</h2>
+<%# @jobs["jobTitles"].each do |job| %>
+  <h3>Job Title: </h3><p><%#= job["jobTitle"] %></p>
+  <h4>Number of jobs: </h4><p><%#= job["numJobs"] %></p>
+  <br><br> -->
+<%# end %>
 
-<a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+<!-- <a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a> -->

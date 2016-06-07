@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
 
       redirect_to user_path(@user)
     else
-      flash[:alert] = "Login Failed, bro"
+      # flash[:alert] = "Login Failed, bro"
       redirect_to root_path, alert: "Login failed, please remember your information, bro"
     end
   end

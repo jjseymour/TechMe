@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
   has_many :user_languages
   has_many :languages, through: :user_languages
 
-  #include Gauth::GauthCreator 
+  validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
+
+  #include Gauth::GauthCreator
 
   has_secure_password
 

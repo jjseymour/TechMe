@@ -1,0 +1,33 @@
+<div class="container">
+
+<% if flash[:alert] %>
+  <div class='alert alert-danger'>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class='alert alert-info'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+<% if flash[:success] %>
+  <div class='alert alert-success'>
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if @current_user %>
+  <% if @current_user.errors.any? %>
+    <div class='alert alert-danger'>
+      <ul>
+        <% @current_user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+</div>

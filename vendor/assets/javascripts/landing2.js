@@ -12,12 +12,12 @@ $(window).load(function() {
 });
 //
 // /*Checking if it's touch device we disable some functionality due to inconsistency*/
-// // if (Modernizr.touch) {
-// // 	$('*').removeClass('animated');
-// // }
+if (Modernizr.touch) {
+	$('*').removeClass('animated');
+}
 //
 // /*Document Ready*/
-// $(document).ready(function(e) {
+$(document).ready(function(e) {
 //
 //
 // 	/********Responsive Navigation**********/
@@ -31,13 +31,13 @@ $(window).load(function() {
 // 	});
 //
 // 	/*Hero Slider*/
-// 	// $('.hero-slider').bxSlider({
-// 	// 	mode: 'fade',
-// 	// 	adaptiveHeight: true,
-// 	// 	controls: false,
-// 	// 	video: true,
-// 	// 	touchEnabled: false
-// 	// });
+	$('.hero-slider').bxSlider({
+		mode: 'fade',
+		adaptiveHeight: true,
+		controls: false,
+		video: true,
+		touchEnabled: false
+	});
 //
 // 	////////////////////////////////////////////////////////////
 // 	//INTERNAL ANCHOR LINKS SCROLLING (NAVIGATION)
@@ -339,4 +339,4 @@ $(window).load(function() {
 // 	}, { offset: '75%', triggerOnce: true });
 //
 //
-// });/*/Document ready*/
+});/*/Document ready*/

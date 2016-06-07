@@ -17,7 +17,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    # binding.pry
     @job = Job.find_by(title: params[:title])
     @job.destroy
     render json: { success: true }

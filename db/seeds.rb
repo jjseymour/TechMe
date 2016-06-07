@@ -28,7 +28,7 @@ User.create(username: "Bro-ke", password: "bro", avatar_pic: Faker::Avatar.image
 
 i = 1
 until i > 15 do
-  User.find(i).languages << Language.find(i)
+  # User.find(i).languages << Language.find(i)
   User.find(i).events << Event.find(i)
   User.find(i).jobs << Job.find(i)
   i += 1

@@ -14,7 +14,7 @@
 //= require jquery_ujs
 // require libs/jquery-1.11.2.min
 // require libs/jquery.easing.1.3
-// require libs/modernizr.custom
+//= require libs/modernizr.custom
 // require mailer/mailer
 //= require plugins/bootstrap.min
 // require plugins/jquery.touchSwipe.min
@@ -22,12 +22,12 @@
 //= require plugins/icheck.min
 // require plugins/jquery.validate.min
 // require plugins/gallery
-// require plugins/jquery.fitvids
-// require plugins/jquery.bxslider.min
+//= require plugins/jquery.fitvids
+//= require plugins/jquery.bxslider.min
 // require plugins/chart
 //= require plugins/waypoints.min
 //= require plugins/smoothscroll
 // require plugins/color-switcher
 //= require landing2
-// require turbolinks
+//= require turbolinks
 //= require_tree .

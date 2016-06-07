@@ -6,7 +6,7 @@ function onJobSave(){
     $('button#save-job').on('click', function(){
 
       if ($('.remove-job').attr("data-job-button") === $(this).attr("data-job-button")) {
-        // debugger;
+        debugger;
 
         var jobId = $(this).data().jobButton;
         var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
@@ -51,7 +51,7 @@ function onJobSave(){
         success: function(response){
           $('#save-job').html("Remove Job from list");
           $('#save-job').addClass("remove-job");
-          // debugger;
+          debugger;
         }
       })
     }

@@ -20,22 +20,26 @@
 
     <nav class="main-navi">
       <ul>
-        <li class="active"><a class="scroll-up" href="/">Home</a></li>
-        <li class="has-dropdown"><a class="scroll" href="#features">Features<i class="fa fa-caret-down"></i></a>
+        <% if @current_user %>
+          <li class="active"><a class="scroll-up" href="<%= user_path(@current_user) %>">Home</a></li>
+        <% else %>
+          <li class="active"><a class="scroll-up" href="<%= root_path %>">Home</a></li>
+        <% end %>
+        <li class="has-dropdown"><a class="" href="<%= user_path(@current_user) %>">Features<i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a class="scroll" href="#features">Calendar</a></li>
+            <li><a class="scroll" href="#features">Events</a></li>
+            <li><a class="scroll" href="#features">Jobs</a></li>
+            <!-- <li><a href="#">Submenu Item</a></li> -->
+          </ul>
+        </li>
+        <!-- <li class="has-dropdown"><a href="coming-soon.html">Coming soon<i class="fa fa-caret-down"></i></a>
           <ul class="dropdown">
             <li><a href="#">Submenu Item</a></li>
             <li><a href="#">Submenu Item</a></li>
             <li><a href="#">Submenu Item</a></li>
-            <li><a href="#">Submenu Item</a></li>
           </ul>
-        </li>
-        <li class="has-dropdown"><a href="coming-soon.html">Coming soon<i class="fa fa-caret-down"></i></a>
-          <ul class="dropdown">
-            <li><a href="#">Submenu Item</a></li>
-            <li><a href="#">Submenu Item</a></li>
-            <li><a href="#">Submenu Item</a></li>
-          </ul>
-        </li>
+        </li> -->
         <li><a href="<%= new_registration_path %>" data-method="get">Sign Up</a></li>
       </ul>
     </nav>

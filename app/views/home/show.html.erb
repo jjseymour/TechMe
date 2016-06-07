@@ -13,7 +13,7 @@
             <a class="btn btn-primary" href="<%= new_registration_path %>" data-method="get">Sign Up</a>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 animated">
-            <%= image_tag "hero-slider/imac", class:"pull-right", width:"689", height:"659", alt:"Components and Styles" %>
+            <%= image_tag "hero-slider/imac.png", class:"pull-right", width:"689", height:"659", alt:"Components and Styles" %>
           </div>
         </div>
         <div class="slide">
@@ -25,7 +25,7 @@
             <a class="btn btn-primary" href="coming-soon.html">Go to Coming soon page</a>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
-            <%= image_tag "hero-slider/iphone", class:"iphone", width:"649", height:"400", alt:"Coming Soon Page" %>
+            <%= image_tag "hero-slider/iphone.png", class:"iphone", width:"649", height:"400", alt:"Coming Soon Page" %>
           </div>
         </div>
         <div class="slide">
@@ -48,3 +48,11 @@
     </div><!--Close Hero Slider-->
   </div>
 </section><!--Close Hero -->
+
+<%= render 'layouts/faq' %>
+
+<%= render 'layouts/testimonials' %>
+
+<%= render 'layouts/team_members' %>
+
+<%= render 'layouts/contact_us' %>

@@ -3,69 +3,103 @@
   <div class="row">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs central">
-      <li class="active"><a href="#clean-code" data-toggle="tab">Clean Code</a></li>
-      <li><a href="#font-icons" data-toggle="tab">Font Icons</a></li>
-      <li><a href="#more" data-toggle="tab">More</a></li>
+      <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
+      <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+      <li><a href="#jobs" data-toggle="tab">Jobs</a></li>
     </ul>
   </div>
 </div>
 <!-- Tab panes -->
 <div class="container">
   <div class="row tab-content central">
-    <div class="tab-pane fade in active col-lg-12" id="clean-code">
+    <div class="tab-pane fade col-lg-12" id="calendar">
       <div class="row">
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
-          <%= image_tag "features/1.png", alt:"Clean Code" %>
+          <%#= image_tag "features/1.png", alt:"Clean Code" %>
+          <h1>Calendar</h1>
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
-              <h2>Clean code</h2>
+              <h2>Calendar</h2>
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+              <h1>Coming Soon!</h1>
+
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-support"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-calendar"></i></div>
             <div class="col-lg-10">
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-map"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-calendar2"></i></div>
             <div class="col-lg-10">
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-gift"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-box-add"></i></div>
             <div class="col-lg-10">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade in active col-lg-12" id="events">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 animated fadeInLeft">
+          <%#= image_tag "features/2.png", alt:"Font Icons" %>
 
+          <div class="row">
+            <div class="col-lg-8 col-md-10">
+              <div class="panel-group" id="accordion">
+                <% num = 1 %>
+                <% @current_user.events.each_with_index do |event,i| %>
+                  <div class="panel">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" aria-expanded="false">
+                      Event Name: <%= event.name %>
+                      <div class="indicator">
+                        <div class="icon">
+                          <span class="hr-line"></span>
+                          <span class="vr-line"></span>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
+                      <div class="panel-body">
+                        <h3>Event Name: </h3><p><%= event.name %></p>
+                        <h3>Location: </h3><p><%= event.location %></p>
+                        <!-- <h3>Description: </h3><p><%#= event.description.html_safe %></p> -->
+                        <h3>How to attend:</h3><p><a href="<%= event.rsvp %>"> Attend This Meetup</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <% num += 1 %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="tab-pane fade col-lg-12" id="font-icons">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 animated fadeInLeft">
-          <%= image_tag "features/2.png", alt:"Font Icons" %>
+
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
-              <h2>800+ Font icons</h2>
+              <h2>Events</h2>
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-scissors"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-fire"></i></div>
             <div class="col-lg-10">
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-code"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-list"></i></div>
             <div class="col-lg-10">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
             </div>
@@ -73,26 +107,60 @@
         </div>
       </div>
     </div>
-    <div class="tab-pane fade col-lg-12" id="more">
+    <div class="tab-pane fade col-lg-12" id="jobs">
       <div class="row">
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
-          <%= image_tag "features/3", class:"img-center", alt:"More Features" %>
+          <%#= image_tag "features/3.png", class:"img-center", alt:"More Features" %>
+
+          <div class="row">
+            <div class="col-lg-8 col-md-10">
+              <div class="panel-group" id="accordion">
+                <% num = 1 %>
+                <% @current_user.jobs.each_with_index do |job, i| %>
+                  <div class="panel">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>"  aria-expanded="false">
+                      Job Title: <%= job.title %>
+                      <div class="indicator">
+                        <div class="icon">
+                          <span class="hr-line"></span>
+                          <span class="vr-line"></span>
+                        </div>
+                      </div>
+                    </a>
+                    <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
+                      <div class="panel-body">
+                        <button id="save-job" class="pull-right btn btn-primary" data-job-button="<%= num %>">Add Job to list</button>
+                        <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job.company %></p>
+                        <h3>Location: </h3><p id="getLocation" data-location="<%= i %>"><%= job.location %></p>
+                        <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job.description.html_safe %></div>
+                        <h3>Position Length: </h3><p id="getPosition" data-position="<%= i %>"><%= job.position %></p>
+                        <h3>Posted On: </h3><p id="getPostedOn" data-postedon="<%= i %>"><%= job.date_posted %></p>
+                        <h3>How to apply: </h3><div id="getApply" data-apply="<%= i %>"><%= job.apply.html_safe %></div>
+                      </div>
+                    </div>
+                  </div>
+                  <% num += 1 %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
-              <h2>More features overview</h2>
+              <h2>Jobs</h2>
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-youtube"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-fire"></i></div>
             <div class="col-lg-10">
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-2"><i class="feature-icon icon-compass"></i></div>
+            <div class="col-lg-2"><i class="feature-icon icon-list2"></i></div>
             <div class="col-lg-10">
               <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
             </div>

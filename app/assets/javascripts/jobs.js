@@ -1,34 +1,16 @@
 $(document).ready(function(event){
-  // onJobRemove();
   onJobSave();
 })
 
-// function onJobRemove(){
-//   $('button#save-job .remove-job').on('click', function(){
-//     debugger;
-//     var jobId = $(this).data().jobButton;
-//     var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
-//     $.ajax({
-//       method: "post",
-//       url: '/destroy_job',
-//       dataType: 'json',
-//       data: {
-//         title:title
-//       },
-//       success: function(response){
-//         $('.remove-job').html("Add Job to list");
-//         $('.remove-job').removeClass("remove-job");
-//       }
-//     })
-//   })
-// }
-
 function onJobSave(){
     $('button#save-job').on('click', function(){
+
       if ($('.remove-job').attr("data-job-button") === $(this).attr("data-job-button")) {
         debugger;
+
         var jobId = $(this).data().jobButton;
         var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
+
         $.ajax({
           method: "post",
           url: '/destroy_job',
@@ -52,6 +34,7 @@ function onJobSave(){
       var apply = $('[data-apply="' + (jobId - 1) + '"]').html();
       // var salary = $().html();
       // var language = $().html();
+
       $.ajax({
         method: "post",
         url: '/create_job',

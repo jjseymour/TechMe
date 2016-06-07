@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.get_events(params["location"], params["language_selected"]).flatten 
+    @events = EventCreator.create_events(params)
   end
 
   def show
   end
+
 end

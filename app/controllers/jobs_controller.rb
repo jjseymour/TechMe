@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.get_jobs(g_format(params["location"]), params["time"], params["language_selected"]).flatten
+    @jobs = JobCreator.create_jobs(params)
   end
 
   def show
@@ -26,10 +26,6 @@ class JobsController < ApplicationController
   end
 
   private
-
-  def g_format(location)
-    location.downcase.split.join("+")
-  end
 
   def job_params
     params.permit(:title, :company, :location, :description, :position, :date_posted, :apply)

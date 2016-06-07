@@ -19,7 +19,7 @@
           </a>
           <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
             <div class="panel-body">
-              <button id="save-job" class="pull-right btn btn-primary" data-job-button="<%= num %>">Add Job to your list</button>
+              <button id="save-job" class="pull-right btn btn-primary" data-job-button="<%= num %>">Add Job to list</button>
               <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job["company"] %></p>
               <h3>Location: </h3><p id="getLocation" data-location="<%= i %>"><%= job["location"] %></p>
               <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job["description"].html_safe %></div>

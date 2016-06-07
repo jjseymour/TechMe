@@ -19,12 +19,16 @@ describe UsersController do
       language_id: 9
       )
 
-    within(".form-control") do 
-      fill_in('location', with: 'New York')
-      check('Ruby')
-    end 
+    it 'visits the users page', :js => true do
+     visit '/users'
+
+      within(".form-control") do 
+        fill_in('location', with: 'New York')
+        check('Ruby')
+      end 
     #binding.pry
     #@user = User.find_by(username: "Bromano")
+    end 
 end
   
   describe "GET Users#show view page" do

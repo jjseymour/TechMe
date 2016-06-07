@@ -3,8 +3,13 @@
 <!--Header-->
 <header class="stiky-header">
   <div class="container group">
-    <a class="logo" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", style: "height: 60px;", alt:"TechMe" %></a>
-    <a class="logo-mobile" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", alt:"TechMe" %></a>
+    <% if @current_user %>
+      <a class="logo" href="<%= user_path(@current_user) %>" data-method="get"><%= image_tag "TechMe-logo3.png", style: "height: 60px;", alt:"TechMe" %></a>
+      <a class="logo-mobile" href="<%= user_path(@current_user) %>" data-method="get"><%= image_tag "TechMe-logo3.png", alt:"TechMe" %></a>
+    <% else %>
+      <a class="logo" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", style: "height: 60px;", alt:"TechMe" %></a>
+      <a class="logo-mobile" href="<%= root_path %>" data-method="get"><%= image_tag "TechMe-logo3.png", alt:"TechMe" %></a>
+    <% end %>
     <div class="navi-toggle group">
       <span class="dot"></span><span class="line"></span>
       <span class="dot"></span><span class="line"></span>

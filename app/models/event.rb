@@ -6,7 +6,6 @@ class Event < ApplicationRecord
   def self.get_events(location, languages)
     events = []
     languages.each do |language| 
-      #language_name = Language.find_by(id: language).title
       events << meetup_call(location, language)
     end
     events 

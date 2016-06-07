@@ -10,6 +10,8 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
+      @current_user.jobs << @job
+      @current_user.save
       render json: { success: true }
     else
       render json: { success: false }
@@ -17,7 +19,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
+    binding.pry
     @job = Job.find_by(title: params[:title])
     @job.destroy
     render json: { success: true }

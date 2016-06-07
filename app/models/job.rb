@@ -3,7 +3,7 @@ class Job < ApplicationRecord
   has_many :users, through: :user_jobs
 
   belongs_to :language
-  validates :title, uniqueness: true
+  # validates :title, uniqueness: true
 
   def self.get_jobs(location, time, languages)
     jobs = []

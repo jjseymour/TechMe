@@ -16,31 +16,28 @@
       <a class="btn btn-primary btn-login" href="<%= logout_path %>" data-method="delete"><i class="icon-user"></i>Logout</a>
     <% else %>
       <a class="btn btn-primary btn-login" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
+      <a href="<%= new_registration_path %>" class="btn btn-success btn-login" data-method="get"><i class="icon-user"></i>Sign Up</a>
     <% end %>
-
     <nav class="main-navi">
       <ul>
         <% if @current_user %>
-          <li class="active"><a class="scroll-up" href="<%= user_path(@current_user) %>">Home</a></li>
+          <li class="active"><a class="scroll-up" href="<%= user_path(@current_user) %>" data-method="get">Home</a></li>
+          <li class="has-dropdown"><a href="<%= user_path(@current_user) %>" data-method="get">Features<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+              <li><a class="scroll" href="<%= user_path(@current_user) %>#calendar">Calendar</a></li>
+              <li><a class="scroll" href="<%= user_path(@current_user) %>#events">Events</a></li>
+              <li><a class="scroll" href="<%= user_path(@current_user) %>#jobs">Jobs</a></li>
+            </ul>
         <% else %>
-          <li class="active"><a class="scroll-up" href="<%= root_path %>">Home</a></li>
+          <li class="active"><a class="scroll-up" href="<%= root_path %>" data-method="get">Home</a></li>
+          <li class="has-dropdown"><a href="<%= root_path %>" data-method="get">Features<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+              <li><a class="scroll" href="<%= root_path %>#calendar">Calendar</a></li>
+              <li><a class="scroll" href="<%= root_path %>#events">Events</a></li>
+              <li><a class="scroll" href="<%= root_path %>#jobs">Jobs</a></li>
+            </ul>
         <% end %>
-        <li class="has-dropdown"><a class="" href="<%= user_path(@current_user) %>">Features<i class="fa fa-caret-down"></i></a>
-          <ul class="dropdown">
-            <li><a class="scroll" href="#features">Calendar</a></li>
-            <li><a class="scroll" href="#features">Events</a></li>
-            <li><a class="scroll" href="#features">Jobs</a></li>
-            <!-- <li><a href="#">Submenu Item</a></li> -->
-          </ul>
         </li>
-        <!-- <li class="has-dropdown"><a href="coming-soon.html">Coming soon<i class="fa fa-caret-down"></i></a>
-          <ul class="dropdown">
-            <li><a href="#">Submenu Item</a></li>
-            <li><a href="#">Submenu Item</a></li>
-            <li><a href="#">Submenu Item</a></li>
-          </ul>
-        </li> -->
-        <li><a href="<%= new_registration_path %>" data-method="get">Sign Up</a></li>
       </ul>
     </nav>
   </div>

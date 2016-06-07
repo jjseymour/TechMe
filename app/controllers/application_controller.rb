@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     if @current_user.nil? && session[:user_id]
       session[:user_id] = nil
-      redirect_to login_path
+      redirect_to root_path
     else
       @current_user
     end

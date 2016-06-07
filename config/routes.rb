@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'home#show'
 
   resources 'jobs', only: [:index, :show]
-
-  post 'job_search', to: 'jobs#create'
+  post 'create_job', to: 'jobs#create'
+  post 'destroy_job', to: 'jobs#destroy'
 
   resources 'events', only: [:index, :show]
 

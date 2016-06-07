@@ -6,10 +6,10 @@
   <div class="col-lg-8 col-md-10">
     <div class="panel-group" id="accordion">
       <% num = 1 %>
-      <% @jobs.each do |job| %>
+      <% @jobs.each_with_index do |job, i| %>
         <div class="panel">
-          <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" aria-expanded="false">
-            Job Title: <%= job["title"] %>
+          <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>"  aria-expanded="false">
+            Job Title: <%= job["title"]%>
             <div class="indicator">
               <div class="icon">
                 <span class="hr-line"></span>
@@ -19,12 +19,13 @@
           </a>
           <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
             <div class="panel-body">
-              <h3>Company Name: </h3><p><%= job["company"] %></p>
-              <h3>Location: </h3><p><%= job["location"] %></p>
-              <h3>Description: </h3><p><%= job["description"].html_safe %></p>
-              <h3>Position Length: </h3><p><%= job["type"] %></p>
-              <h3>Posted On: </h3><p><%= job["created_at"] %></p>
-              <h3>How to apply: </h3><p><%= job["how_to_apply"].html_safe %></p>
+              <button id="save-job" class="pull-right btn btn-primary" data-job-button="<%= num %>">Add Job to list</button>
+              <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job["company"] %></p>
+              <h3>Location: </h3><p id="getLocation" data-location="<%= i %>"><%= job["location"] %></p>
+              <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job["description"].html_safe %></div>
+              <h3>Position Length: </h3><p id="getPosition" data-position="<%= i %>"><%= job["type"] %></p>
+              <h3>Posted On: </h3><p id="getPostedOn" data-postedon="<%= i %>"><%= job["created_at"] %></p>
+              <h3>How to apply: </h3><div id="getApply" data-apply="<%= i %>"><%= job["how_to_apply"].html_safe %></div>
             </div>
           </div>
         </div>

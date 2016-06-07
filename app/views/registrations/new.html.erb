@@ -1,5 +1,7 @@
 <%= form_for(@user, class: "login-form", role: "form") do |f| %>
 
+  <%= render partial: 'shared/errors' %>
+
   <div class="form-group">
     <%= f.label :username %>
     <%= f.text_field :username, class: "form-control", placeholder: "Enter Username", required: true %>

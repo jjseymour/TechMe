@@ -3,7 +3,7 @@
 <h1>New Event Search</h1>
 
 <%= form_tag events_path, method: :get do %>
-  <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
+  <%= text_field_tag "location", nil, class: "form-control", id: "event_location", placeholder: "location" %>
 
   <% Language.all.each do |language| %>
     <%= check_box_tag 'language_selected[]', language.title, false, class: "iCheck-helper" %>
@@ -18,7 +18,7 @@
 <h1>New Job Search</h1>
 
 <%= form_tag jobs_path, method: :get do %>
-  <%= text_field_tag "location", nil, class: "form-control", placeholder: "location" %>
+  <%= text_field_tag "location", nil, class: "form-control", id: "job_location", placeholder: "location" %>
 
   <% Language.all.each do |language| %>
     <%= check_box_tag 'language_selected[]', language.id, false, class: "iCheck-helper" %>

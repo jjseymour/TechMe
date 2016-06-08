@@ -63,7 +63,7 @@
                   <% @current_user.events.each_with_index do |event, i| %>
                       <%# cache(event) do %>
                     <div class="panel">
-                      <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>" id= "getName" data-name="<%=i%>" aria-expanded="false">
+                      <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_event<%= i %>" id= "getName" data-name="<%=i%>" aria-expanded="false">
                         <%= event.name %>
                         <div class="indicator">
                           <div class="icon">
@@ -72,7 +72,7 @@
                           </div>
                         </div>
                       </a>
-                      <div id="collapse<%= i %>" class="panel-collapse collapse" aria-expanded="false">
+                      <div id="collapse_event<%= i %>" class="panel-collapse collapse" aria-expanded="false">
                         <div class="panel-body">
                           <button id="remove-event" class="pull-right btn btn-primary" data-event-button="<%= i %>" data-index="<%= event.id %>">Remove Event from Calendar</button>
                           <h3>Event Name: </h3><p><%= event.name %></p>
@@ -125,7 +125,7 @@
                 <% num = 1 %>
                 <% @current_user.jobs.each_with_index do |job, i| %>
                   <div class="panel">
-                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_job<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
                       <%= job.title %>
                       <div class="indicator">
                         <div class="icon">
@@ -134,7 +134,7 @@
                         </div>
                       </div>
                     </a>
-                    <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
+                    <div id="collapse_job<%= num %>" class="panel-collapse collapse" aria-expanded="false">
                       <div class="panel-body">
                         <button id="remove-job" data-index="<%= job.id %>" class="pull-right btn btn-primary" data-job-button="<%= num %>">Remove Job from list</button>
                         <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job.company %></p>

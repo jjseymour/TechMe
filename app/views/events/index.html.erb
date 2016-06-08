@@ -25,7 +25,7 @@
               <h3>Event Name: </h3><p><%= event["name"] %></p>
               <h3>Location: </h3><p id="getCity" data-city="<%=i%>"><%= event["city"] %></p>
               <h3>Description: </h3><div id="getDescription" data-description="<%=i%>"><%= event["description"].html_safe %></div>
-              <h3>How to attend:</h3><p id="getRsvp" data-rsvp="<%=i%>"><a href="<%= event["link"] %>" target="_blank"> Attend This Meetup</a></p>
+              <h3>How to attend:</h3><p id="getRsvp" data-attend="<%=i%>"><a href="<%= event["link"] %>" target="_blank"> Attend This Meetup</a></p>
             </div>
           </div>
         </div>

@@ -8,16 +8,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     @event = Event.new(event_params)
     if @event.save
-      binding.pry
+      @current_user.events << @event
       render json: {
         success: true,
         eventID: params[:event_id]
       }
     else
-      binding.pry
       render json: {
         success: false,
         eventID: params[:event_id]
@@ -25,9 +23,13 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    binding.pry
+  end
+
   private
 
   def event_params
-    params.permit(:event_name, :event_city, :event_description, :event_rsvp)
+    params.permit(:name, :location, :description, :attend)
   end
 end

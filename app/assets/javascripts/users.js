@@ -1,6 +1,41 @@
 $(document).ready(function(event){
   onJobRemove();
+  onEventRemove();
 })
+
+function onEventRemove(){
+  $('button#remove-event').on('click', function(){
+    debugger;
+    var eventID = $(this).data().eventButton;
+    var name = $('[data-name="' + $(this).data().eventButton + '"]').text().trim();
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function onJobRemove(){
     $('button#remove-job').on('click', function(){

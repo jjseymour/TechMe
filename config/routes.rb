@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'create_job', to: 'jobs#create'
   # post 'destroy_job/:id', to: 'jobs#destroy'
 
-  resources 'events', only: [:index, :show, :create]
+  resources 'events', only: [:index, :show, :create, :destroy]
 
   resources 'sessions', only: :create
   get 'login', to: 'sessions#new'

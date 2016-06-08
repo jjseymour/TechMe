@@ -4,7 +4,6 @@ $(document).ready(function(event){
 
 function onJobSave(){
     $('button#save-job').on('click', function(){
-
       var jobId = $(this).data().jobButton
       var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
       var company = $('[data-company="' + (jobId - 1) + '"]').text();
@@ -12,11 +11,12 @@ function onJobSave(){
       var description = $('[data-description="' + (jobId - 1) + '"]').html();
       var position = $('[data-position="' + (jobId - 1) + '"]').text();
       var datePosted = $('[data-postedon="' + (jobId - 1) + '"]').text();
+      $('[data-apply="' + (jobId - 1) + '"] a').attr('target', '_blank')
       var apply = $('[data-apply="' + (jobId - 1) + '"]').html();
       // var salary = $().html();
       // var language = $().html();
       // var passIn = $(this)
-
+     
       $.ajax({
         method: "post",
         url: '/create_job',

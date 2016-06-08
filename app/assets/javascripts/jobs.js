@@ -5,24 +5,6 @@ $(document).ready(function(event){
 function onJobSave(){
     $('button#save-job').on('click', function(){
 
-    //   if ($('.remove-job').attr("data-job-button") === $(this).attr("data-job-button")) {
-    //
-    //     var jobId = $(this).data().jobButton;
-    //     var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
-    //
-    //     $.ajax({
-    //       method: "post",
-    //       url: '/destroy_job',
-    //       dataType: 'json',
-    //       data: {
-    //         title:title
-    //       },
-    //       success: function(response){
-    //         $('.remove-job').html("Add Job to list");
-    //         $('.remove-job').removeClass("remove-job");
-    //       }
-    //     })
-    // }else{
       var jobId = $(this).data().jobButton
       var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
       var company = $('[data-company="' + (jobId - 1) + '"]').text();
@@ -33,6 +15,7 @@ function onJobSave(){
       var apply = $('[data-apply="' + (jobId - 1) + '"]').html();
       // var salary = $().html();
       // var language = $().html();
+      // var passIn = $(this)
 
       $.ajax({
         method: "post",
@@ -45,14 +28,14 @@ function onJobSave(){
           description:description,
           position:position,
           date_posted:datePosted,
-          apply:apply
+          apply:apply,
+          job_id:jobId
         },
         success: function(response){
-          $('#save-job').removeClass("btn-primary");
-          $('#save-job').addClass("btn-success");
-          $('#save-job').html("Job added to list");
+          $('[data-job-button="' + parseInt(response.jobId) + '"]').removeClass("btn-primary");
+          $('[data-job-button="' + parseInt(response.jobId) + '"]').addClass("btn-success");
+          $('[data-job-button="' + parseInt(response.jobId) + '"]').html("Job added to list");
         }
       })
-    // }
   })
 }

@@ -4,8 +4,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      # flash[:alert] = "Thank you for joining TechMe, bro. Your account has be activated. Please login to continue."
-      redirect_to user_path(@user), alert: "Thank you for joining TechMe, bro. Your account has be activated. Please login to continue."
+      redirect_to user_path(@user), notice: "Thank you for joining TechMe, bro. Your account has be activated."
     else
       flash.now[:alert] = "There was an error with your registration. Please try again."
       render 'registrations/new'

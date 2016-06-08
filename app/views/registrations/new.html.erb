@@ -1,6 +1,8 @@
-<%= form_for(@user, class: "login-form", role: "form") do |f| %>
+<%= render partial: 'shared/errors' %>
 
-  <%= render partial: 'shared/errors' %>
+<% cache do %>
+
+<%= form_for(@user, class: "login-form", role: "form") do |f| %>
 
   <div class="form-group">
     <%= f.label :username %>
@@ -18,5 +20,7 @@
   </div>
 
   <%= f.submit "Sign Up", class: "btn btn-primary" %>
+
+<% end %>
 
 <% end %>

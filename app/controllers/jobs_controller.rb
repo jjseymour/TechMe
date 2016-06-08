@@ -2,6 +2,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = JobCreator.create_jobs(params)
+    fresh_when etag: @jobs
   end
 
   def show

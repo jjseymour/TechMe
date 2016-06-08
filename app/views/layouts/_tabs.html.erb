@@ -54,6 +54,7 @@
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
           <%#= image_tag "features/2.png", alt:"Font Icons" %>
 
+          <% cache do %>
           <div class="row">
             <div class="col-lg-8 col-md-10">
               <div class="panel-group" id="accordion">
@@ -83,6 +84,7 @@
               </div>
             </div>
           </div>
+          <% end %>
 
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
@@ -112,6 +114,7 @@
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
           <%#= image_tag "features/3.png", class:"img-center", alt:"More Features" %>
 
+          <% cache do %>
           <div class="row">
             <div class="col-lg-8 col-md-10">
               <div class="panel-group" id="accordion">
@@ -144,6 +147,7 @@
               </div>
             </div>
           </div>
+          <% end %>
 
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">

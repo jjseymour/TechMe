@@ -1,3 +1,5 @@
+<% cache(@events) do %>
+
 <h1>Showing events</h1>
 
 <div class="row">
@@ -5,8 +7,9 @@
     <div class="panel-group" id="accordion">
       <%= render partial: 'shared/errors' %>
       <% num = 1 %>
+      
       <% @events.each do |event| %>
-
+          <% cache(event) do %>
         <div class="panel">
           <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" aria-expanded="false">
             Event Name: <%= event["name"] %>
@@ -28,6 +31,8 @@
         </div>
         <% num += 1 %>
       <% end %>
+      <% end %>
     </div>
   </div>
 </div>
+<% end %>

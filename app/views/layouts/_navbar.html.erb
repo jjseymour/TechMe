@@ -1,6 +1,7 @@
 <%= render 'sessions/nav_login' %>
 
 <!--Header-->
+<% cache do %>
 <header class="stiky-header">
   <div class="container group">
     <% if @current_user %>
@@ -47,3 +48,4 @@
     </nav>
   </div>
 </header>
+<% end %>

@@ -1,3 +1,5 @@
+<% cache(@jobs) do %>
+
 <h1>Showing jobs</h1>
 
 <div class="row">
@@ -5,7 +7,9 @@
     <div class="panel-group" id="accordion">
       <%= render partial: 'shared/errors' %>
       <% num = 1 %>
+      
       <% @jobs.each_with_index do |job, i| %>
+      <% cache(job) do %>
         <div class="panel">
           <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>"  aria-expanded="false">
             Job Title: <%= job["title"]%>
@@ -30,6 +34,8 @@
         </div>
         <% num += 1 %>
       <% end %>
+      <% end %>
     </div>
   </div>
 </div>
+<% end %>

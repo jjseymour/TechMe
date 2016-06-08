@@ -7,9 +7,11 @@
 <%= form_tag events_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", id: "event_location", placeholder: "location", required: true %>
 
+  <% cache do %>
   <% Language.all.each do |language| %>
     <%= check_box_tag 'language_selected[]', language.title, false, class: "iCheck-helper" %>
     <%= language.title %>
+  <% end %>
   <% end %>
 
   <br><br>
@@ -21,10 +23,12 @@
 
 <%= form_tag jobs_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", id: "job_location", placeholder: "location", required: true %>
-
+  
+  <% cache do %>
   <% Language.all.each do |language| %>
     <%= check_box_tag 'language_selected[]', language.id, false, class: "iCheck-helper" %>
     <%= language.title %>
+  <% end %>
   <% end %>
 
   <br><br>

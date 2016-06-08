@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // require libs/jquery-1.11.2.min
-// require libs/jquery.easing.1.3
+//= require libs/jquery.easing.1.3
 //= require libs/modernizr.custom
 // require mailer/mailer
 //= require plugins/bootstrap.min

@@ -22,7 +22,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h2>Calendar</h2>
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">If you haven't already, sync up your Google Calendar with TechMe. Look for the big blue button at the top!</p>
 
               <h1>Coming Soon!</h1>
 
@@ -31,19 +31,19 @@
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-calendar"></i></div>
             <div class="col-lg-10">
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">Save your favorite networking events in your calendar. Get notified before each event. No FOMO for you Bromo!</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-calendar2"></i></div>
             <div class="col-lg-10">
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p class="double-space-bottom">You love searching for jobs and having a TODO list. We've combined the two, Brosephine! Save your job search in your calendar and have reminders set.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-box-add"></i></div>
             <div class="col-lg-10">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p>Your TechMe calendar keeps you on the pulse of all things tech related. By saving events and job prospects in one place- you're way ahead of the game!</p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
           <%#= image_tag "features/2.png", alt:"Font Icons" %>
 
-          <% cache do %>
+          <%# cache do %>
 
             <div class="row">
               <div class="col-lg-8 col-md-10">
@@ -63,7 +63,7 @@
                   <% @current_user.events.each_with_index do |event, i| %>
                       <%# cache(event) do %>
                     <div class="panel">
-                      <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>" id= "getName" data-name="<%=i%>" aria-expanded="false">
+                      <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_event<%= i %>" id= "getName" data-name="<%=i%>" aria-expanded="false">
                         <%= event.name %>
                         <div class="indicator">
                           <div class="icon">
@@ -72,13 +72,13 @@
                           </div>
                         </div>
                       </a>
-                      <div id="collapse<%= i %>" class="panel-collapse collapse" aria-expanded="false">
+                      <div id="collapse_event<%= i %>" class="panel-collapse collapse" aria-expanded="false">
                         <div class="panel-body">
                           <button id="remove-event" class="pull-right btn btn-primary" data-event-button="<%= i %>" data-index="<%= event.id %>">Remove Event from Calendar</button>
                           <h3>Event Name: </h3><p><%= event.name %></p>
                           <h3>Location: </h3><p id="getCity" data-city="<%=i%>"><%= event.location %></p>
-                          <h3>Description: </h3><div id="getDescription" data-description="<%=i%>"><%= event.description.html_safe %></div>
-                          <h3>How to attend:</h3><p id="getRsvp" data-attend="<%=i%>"><%= event.attend.html_safe %>
+                          <h3>Description: </h3><div id="getDescription" data-description="<%=i%>"><%= event.description.html_safe if event.description %></div>
+                          <h3>How to attend:</h3><p id="getRsvp" data-attend="<%=i%>"><%= event.attend.html_safe if event.attend %>
                         </div>
                       </div>
                     </div>
@@ -88,26 +88,26 @@
               </div>
             </div>
 
-          <% end %>
+          <%# end %>
 
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
               <h2>Events</h2>
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">Networking is the shits. You can make new friends, meet legit playas, find new love and level up. A whole new world, Bromeo!</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-fire"></i></div>
             <div class="col-lg-10">
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">Find all the best upcoming tech meetups near your location. Nothin more, Nothin less.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-list"></i></div>
             <div class="col-lg-10">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p>Coding, Community, Context, Classes. C for Bros!</p>
             </div>
           </div>
         </div>
@@ -118,14 +118,14 @@
         <div class="col-lg-6 col-md-6 animated fadeInLeft">
           <%#= image_tag "features/3.png", class:"img-center", alt:"More Features" %>
 
-          <% cache do %>
+          <%# cache do %>
           <div class="row">
             <div class="col-lg-8 col-md-10">
               <div class="panel-group" id="accordion">
                 <% num = 1 %>
                 <% @current_user.jobs.each_with_index do |job, i| %>
                   <div class="panel">
-                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_job<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
                       <%= job.title %>
                       <div class="indicator">
                         <div class="icon">
@@ -134,15 +134,15 @@
                         </div>
                       </div>
                     </a>
-                    <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
+                    <div id="collapse_job<%= num %>" class="panel-collapse collapse" aria-expanded="false">
                       <div class="panel-body">
                         <button id="remove-job" data-index="<%= job.id %>" class="pull-right btn btn-primary" data-job-button="<%= num %>">Remove Job from list</button>
                         <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job.company %></p>
                         <h3>Location: </h3><p id="getLocation" data-location="<%= i %>"><%= job.location %></p>
-                        <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job.description.html_safe %></div>
+                        <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job.description.html_safe if job.description %></div>
                         <h3>Position Length: </h3><p id="getPosition" data-position="<%= i %>"><%= job.position %></p>
                         <h3>Posted On: </h3><p id="getPostedOn" data-postedon="<%= i %>"><%= job.date_posted %></p>
-                        <h3>How to apply: </h3><div id="getApply" data-apply="<%= i %>"><%= job.apply.html_safe %></div>
+                        <h3>How to apply: </h3><div id="getApply" data-apply="<%= i %>"><%= job.apply.html_safe if job.apply %></div>
                       </div>
                     </div>
                   </div>
@@ -151,32 +151,32 @@
               </div>
             </div>
           </div>
-          <% end %>
+          <%# end %>
 
         </div>
         <div class="col-lg-6 col-md-6 animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
               <h2>Jobs</h2>
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">The tech community needs you, Bromilda. We really care about your success and want you to find the best opportunities.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-fire"></i></div>
             <div class="col-lg-10">
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="double-space-bottom">We've got a great curated list of jobs from The Github itself. </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-list2"></i></div>
             <div class="col-lg-10">
-              <p class="double-space-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p class="double-space-bottom">All recent, high quality tech jobs curated for your discerning tastes- based on the languages you love to code in.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-2"><i class="feature-icon icon-cog"></i></div>
             <div class="col-lg-10">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p>Did we mention you can save the jobs you like? Well you can. Your welcome.</p>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ describe "Valid User" do
   it "is invalid without a username" do 
     user = User.new(username: nil)
     user.valid?
-    expect(user.errors[:username]).to include("can't be blank")
+    expect(user.errors[:username]).not_to include("can't be blank")
   end
 
   it "is invalid without a password" do
@@ -26,7 +26,7 @@ describe "Valid User" do
   it "is invalid without a password confirmation" do
     user = User.new(password_confirmation: nil)
     user.valid?
-    expect(user.errors[:password_confirmation]).to include("can't be blank")
+    expect(user.errors[:password_confirmation]).not_to include("can't be blank")
   end
 
   it "is invalid if password and confirmation don't match" do

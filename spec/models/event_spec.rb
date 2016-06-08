@@ -15,4 +15,40 @@ describe "Valid Event" do
     expect(event).to be_valid
   end
 
+  it "is invalid without a name" do 
+    event = Event.new(name: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
+  it "is invalid without a rsvp" do 
+    event = Event.new(rsvp: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
+  it "is invalid without a location" do 
+    event = Event.new(location: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
+  it "is invalid without a paid_event" do 
+    event = Event.new(paid_event: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
+  it "is invalid without a price" do 
+    event = Event.new(price: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
+  it "is invalid without a members" do 
+    event = Event.new(members: nil)
+    event.valid?
+    expect(event.errors[:event])
+  end
+
 end

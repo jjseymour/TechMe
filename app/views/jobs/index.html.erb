@@ -7,7 +7,7 @@
     <div class="panel-group" id="accordion">
       <%= render partial: 'shared/errors' %>
       <% num = 1 %>
-      
+
       <% @jobs.each_with_index do |job, i| %>
       <% cache(job) do %>
         <div class="panel">

@@ -56,13 +56,6 @@
 
           <% cache do %>
 
-
-
-
-
-
-
-
             <div class="row">
               <div class="col-lg-8 col-md-10">
                 <div class="panel-group" id="accordion">
@@ -81,7 +74,7 @@
                       </a>
                       <div id="collapse<%= i %>" class="panel-collapse collapse" aria-expanded="false">
                         <div class="panel-body">
-                          <button id="remove-event" class="pull-right btn btn-primary" data-event-button="<%= i %>">Add Event to Calendar</button>
+                          <button id="remove-event" class="pull-right btn btn-primary" data-event-button="<%= i %>" data-index="<%= event.id %>">Remove Event from Calendar</button>
                           <h3>Event Name: </h3><p><%= event.name %></p>
                           <h3>Location: </h3><p id="getCity" data-city="<%=i%>"><%= event.location %></p>
                           <h3>Description: </h3><div id="getDescription" data-description="<%=i%>"><%= event.description.html_safe %></div>
@@ -94,15 +87,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
 
           <% end %>
 
@@ -142,7 +126,7 @@
                 <% @current_user.jobs.each_with_index do |job, i| %>
                   <div class="panel">
                     <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
-                      Job Title: <%= job.title %>
+                      <%= job.title %>
                       <div class="indicator">
                         <div class="icon">
                           <span class="hr-line"></span>

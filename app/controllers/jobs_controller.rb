@@ -26,7 +26,8 @@ class JobsController < ApplicationController
       UserJob.find_by(job_id: params[:id]).destroy
       render json: {
         success: true,
-        jobId: job_id}
+        jobId: params[:job_id]
+      }
     else
       UserJob.find_by(job_id: params[:id]).destroy
       @job.destroy

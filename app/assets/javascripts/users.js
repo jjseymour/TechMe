@@ -5,37 +5,26 @@ $(document).ready(function(event){
 
 function onEventRemove(){
   $('button#remove-event').on('click', function(){
-    debugger;
     var eventID = $(this).data().eventButton;
-    var name = $('[data-name="' + $(this).data().eventButton + '"]').text().trim();
+    var name = $('[data-name="' + eventID + '"]').text().trim();
+    var id = $(this).data().index;
+
+    $.ajax({
+      url: "/events/" + id,
+      method: "DELETE",
+      data: {
+        id:id,
+        event_id:eventID
+      },
+      success: function(e){
+        var eventID = parseInt(e.eventID);
+        $('[data-event-button="' + parseInt(e.eventID) + '"]').removeClass('btn-primary');
+        $('[data-event-button="' + parseInt(e.eventID) + '"]').addClass('btn-danger');
+        $('[data-event-button="' + parseInt(e.eventID) + '"]').text('Removed Event');
+      }
+    })
   })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function onJobRemove(){
     $('button#remove-job').on('click', function(){
@@ -55,9 +44,8 @@ function onJobRemove(){
           success: function(response){
             $('[data-job-button="' + parseInt(response.jobId) + '"]').removeClass("btn-primary");
             $('[data-job-button="' + parseInt(response.jobId) + '"]').addClass("btn-danger");
-            $('[data-job-button="' + parseInt(response.jobId) + '"]').html("Job removed from list");
+            $('[data-job-button="' + parseInt(response.jobId) + '"]').html("Job Removed");
           }
         })
-
   })
 }

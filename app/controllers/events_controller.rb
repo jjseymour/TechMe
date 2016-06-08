@@ -24,7 +24,21 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    @event = Event.find(params[:id])
+    if @event.users.length > 1
+      UserEvent.find(params[:id]).destroy
+      render json: {
+        success: true,
+        eventID: params[:event_id]
+      }
+    else
+      UserEvent.find(params[:id]).destroy
+      @event.destroy
+      render json: {
+        success: true,
+        eventID: params[:event_id]
+      }
+    end
   end
 
   private

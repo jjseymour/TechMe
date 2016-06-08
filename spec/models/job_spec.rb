@@ -10,10 +10,34 @@ describe "Valid Job" do
       date_posted: "2016-06-02", 
       description: "Vice tofu biodiesel synth taxidermy kickstarter po...", 
       language_id: 4, 
-      location: nil, 
+      location: "Chicago", 
       apply: nil
       )
     expect(job).to be_valid
+  end
+
+  it "is invalid without a title" do 
+    job = Job.new(title: nil)
+    job.valid?
+    expect(job.errors[:job])
+  end
+
+  it "is invalid without a company" do 
+    job = Job.new(company: nil)
+    job.valid?
+    expect(job.errors[:job])
+  end
+
+  it "is invalid without a salary" do 
+    job = Job.new(salary: nil)
+    job.valid?
+    expect(job.errors[:job])
+  end
+
+  it "is invalid without a location" do 
+    job = Job.new(location: nil)
+    job.valid?
+    expect(job.errors[:job])
   end
 
 end

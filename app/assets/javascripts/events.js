@@ -25,7 +25,7 @@ function onEventSave(){
         var eventID = parseInt(e.eventID);
         $('[data-event-button="' + parseInt(e.eventID) + '"]').removeClass('btn-primary');
         $('[data-event-button="' + parseInt(e.eventID) + '"]').addClass('btn-success');
-        $('[data-event-button="' + parseInt(e.eventID) + '"]').text('Remove Event from Calendar');
+        $('[data-event-button="' + parseInt(e.eventID) + '"]').text('Event added to Calendar');
       }
     })
   })

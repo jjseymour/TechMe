@@ -16,8 +16,7 @@ function onJobSave(){
       // var salary = $().html();
       // var language = $().html();
       // var passIn = $(this)
-      debugger
-
+     
       $.ajax({
         method: "post",
         url: '/create_job',

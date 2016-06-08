@@ -5,25 +5,24 @@ $(document).ready(function(event){
 function onJobSave(){
     $('button#save-job').on('click', function(){
 
-      if ($('.remove-job').attr("data-job-button") === $(this).attr("data-job-button")) {
-        debugger;
-
-        var jobId = $(this).data().jobButton;
-        var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
-
-        $.ajax({
-          method: "post",
-          url: '/destroy_job',
-          dataType: 'json',
-          data: {
-            title:title
-          },
-          success: function(response){
-            $('.remove-job').html("Add Job to list");
-            $('.remove-job').removeClass("remove-job");
-          }
-        })
-    }else{
+    //   if ($('.remove-job').attr("data-job-button") === $(this).attr("data-job-button")) {
+    //
+    //     var jobId = $(this).data().jobButton;
+    //     var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
+    //
+    //     $.ajax({
+    //       method: "post",
+    //       url: '/destroy_job',
+    //       dataType: 'json',
+    //       data: {
+    //         title:title
+    //       },
+    //       success: function(response){
+    //         $('.remove-job').html("Add Job to list");
+    //         $('.remove-job').removeClass("remove-job");
+    //       }
+    //     })
+    // }else{
       var jobId = $(this).data().jobButton
       var title = $('[data-title="' + (jobId - 1) + '"]').text().trim();
       var company = $('[data-company="' + (jobId - 1) + '"]').text();
@@ -49,11 +48,11 @@ function onJobSave(){
           apply:apply
         },
         success: function(response){
-          $('#save-job').html("Remove Job from list");
-          $('#save-job').addClass("remove-job");
-          debugger;
+          $('#save-job').removeClass("btn-primary");
+          $('#save-job').addClass("btn-success");
+          $('#save-job').html("Job added to list");
         }
       })
-    }
+    // }
   })
 }

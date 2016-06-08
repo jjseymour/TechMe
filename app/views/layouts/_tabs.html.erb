@@ -72,6 +72,7 @@
                     </a>
                     <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
                       <div class="panel-body">
+                        <button id="remove-event" class="pull-right btn btn-primary" data-job-button="<%= num %>">Remove Event from list</button>
                         <h3>Event Name: </h3><p><%= event.name %></p>
                         <h3>Location: </h3><p><%= event.location %></p>
                         <!-- <h3>Description: </h3><p><%#= event.description.html_safe %></p> -->
@@ -121,7 +122,7 @@
                 <% num = 1 %>
                 <% @current_user.jobs.each_with_index do |job, i| %>
                   <div class="panel">
-                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>"  aria-expanded="false">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= num %>" id= "getTitle" data-title="<%=i%>" aria-expanded="false">
                       Job Title: <%= job.title %>
                       <div class="indicator">
                         <div class="icon">
@@ -132,7 +133,7 @@
                     </a>
                     <div id="collapse<%= num %>" class="panel-collapse collapse" aria-expanded="false">
                       <div class="panel-body">
-                        <button id="save-job" class="pull-right btn btn-primary" data-job-button="<%= num %>">Add Job to list</button>
+                        <button id="remove-job" data-index="<%= job.id %>" class="pull-right btn btn-primary" data-job-button="<%= num %>">Remove Job from list</button>
                         <h3>Company Name: </h3><p id="getCompany" data-company="<%=i%>"><%= job.company %></p>
                         <h3>Location: </h3><p id="getLocation" data-location="<%= i %>"><%= job.location %></p>
                         <h3>Description: </h3><div id="getDescription" data-description="<%= i %>"><%= job.description.html_safe %></div>

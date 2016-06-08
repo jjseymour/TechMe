@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
-  resources 'jobs', only: [:index, :show]
+  resources 'jobs', only: [:index, :show, :destroy]
   post 'create_job', to: 'jobs#create'
-  post 'destroy_job', to: 'jobs#destroy'
+  # post 'destroy_job/:id', to: 'jobs#destroy'
 
   resources 'events', only: [:index, :show]
 

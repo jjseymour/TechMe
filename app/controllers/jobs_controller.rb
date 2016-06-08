@@ -20,10 +20,15 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    @job = Job.find_by(title: params[:title])
-    @job.destroy
-    render json: { success: true }
+    @job = Job.find(params[:id])
+    if @job.users.length > 1
+      UserJob.find_by(job_id: params[:id]).destroy
+      render json: { success: true }
+    else
+      UserJob.find_by(job_id: params[:id]).destroy
+      @job.destroy
+      render json: { success: true }
+    end
   end
 
   private

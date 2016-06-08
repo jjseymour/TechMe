@@ -1,6 +1,6 @@
-<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
-
 <%= render 'shared/errors' %>
+
+<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
 
 <h1>New Event Search</h1>
 
@@ -23,7 +23,7 @@
 
 <%= form_tag jobs_path, method: :get do %>
   <%= text_field_tag "location", nil, class: "form-control", id: "job_location", placeholder: "location", required: true %>
-  
+
   <% cache do %>
   <% Language.all.each do |language| %>
     <%= check_box_tag 'language_selected[]', language.id, false, class: "iCheck-helper" %>

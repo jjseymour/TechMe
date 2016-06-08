@@ -23,11 +23,12 @@ describe UsersController do
       )
 
     click_link('Login')
-    #within("form#new_user.new_user") do 
+    within("form#new_user.new_user") do 
       fill_in('Username', with: 'Bromano')
       fill_in('Password', with: 'password1234')
       fill_in('Password confirmation', with: 'password1234')
-    #end 
+    end 
+    
     #it 'visits the users page', :js => true do
      visit "/users/#{user.id}"
 

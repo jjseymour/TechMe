@@ -14,13 +14,13 @@ function onJobRemove(){
           dataType: 'json',
           data: {
             id:Id,
-            title:title
+            title:title,
+            job_id:jobId
           },
           success: function(response){
-            debugger;
-            $('#remove-job').removeClass("btn-primary");
-            $('#remove-job').addClass("btn-success");
-            $('#remove-job').html("Job removed from list");
+            $('[data-job-button="' + parseInt(response.jobId) + '"]').removeClass("btn-primary");
+            $('[data-job-button="' + parseInt(response.jobId) + '"]').addClass("btn-danger");
+            $('[data-job-button="' + parseInt(response.jobId) + '"]').html("Job removed from list");
           }
         })
 

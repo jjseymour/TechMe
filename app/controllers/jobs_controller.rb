@@ -12,8 +12,9 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       @current_user.jobs << @job
-      @current_user.save
-      render json: { success: true }
+      render json: {
+        success: true,
+        jobId: params[:job_id]}
     else
       render json: { success: false }
     end
@@ -23,11 +24,15 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.users.length > 1
       UserJob.find_by(job_id: params[:id]).destroy
-      render json: { success: true }
+      render json: {
+        success: true,
+        jobId: job_id}
     else
       UserJob.find_by(job_id: params[:id]).destroy
       @job.destroy
-      render json: { success: true }
+      render json: {
+        success: true,
+        jobId: params[:job_id] }
     end
   end
 

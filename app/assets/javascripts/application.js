@@ -17,10 +17,10 @@
 //= require libs/modernizr.custom
 // require mailer/mailer
 //= require plugins/bootstrap.min
-//= require plugins/jquery.touchSwipe.min
-//= require plugins/jquery.placeholder
+// require plugins/jquery.touchSwipe.min
+// require plugins/jquery.placeholder
 //= require plugins/icheck.min
-//= require plugins/jquery.validate.min
+// require plugins/jquery.validate.min
 // require plugins/gallery
 //= require plugins/jquery.fitvids
 //= require plugins/jquery.bxslider.min
